@@ -157,15 +157,7 @@ void eatAss()
              
          });
          
-         unsandbox(getpid());
-         dispatch_async(dispatch_get_main_queue(), ^{
-             [self->_button setTitle:@"Unsandboxed!!" forState:UIControlStateNormal];
-             
-         });
-         
-         
-         
-         
+
          setHSP4();
          dispatch_async(dispatch_get_main_queue(), ^{
              [self->_button setTitle:@"Set HSP4!" forState:UIControlStateNormal];
@@ -752,10 +744,7 @@ void eatAss()
         
         
         init_with_kbase(tfp0, kernel_base);
-        
-        unsandbox(getpid());
-        
-        
+
         rootify(getpid());
         
         setHSP4();
