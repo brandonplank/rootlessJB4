@@ -793,7 +793,7 @@ void eatAss()
 
 - (IBAction)creds:(id)sender {
     
-    NSString *message = [NSString stringWithFormat:@"Jake James, Creator of rootlessJB\n\niOS 12.2 & 12.4 support by Brandon Plank(@BrandonD3V)\n\nExploit by Jake James"];
+    NSString *message = [NSString stringWithFormat:@"Jake James, Creator of rootlessJB\n\niOS 12.2 & 12.4 support by Brandon Plank(@BrandonD3V)\n\nExploit by Jake James\nKernel Base and kernel slide finder by @Chr0nicT."];
     
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Credits" message:message preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *Done = [UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action){
