@@ -47,4 +47,4 @@ All executables must have at least these two entitlements:
 patcher usage:
 ./patcher /path/to/deb /path/to/output_folder
 
-Thanks to: Ian Beer, Brandon Azad, Brandon Plank, Jonathan Levin, Electra Team, IBSparkes, Sam Bingner, Sammy Guichelaar.
+Thanks to: Ian Beer, Brandon Azad, Brandon Plank, Jonathan Levin, Electra Team, IBSparkes, Sam Bingner, Sammy Guichelaar, and @Chr0nicT.
