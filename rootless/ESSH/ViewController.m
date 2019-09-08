@@ -557,6 +557,9 @@ void eatAss()
                  
                  failIf(launch("/var/containers/Bundle/tweaksupport/usr/bin/uicache", NULL, NULL, NULL, NULL, NULL, NULL, NULL), "[-] Failed to install RootlessInstaller");
                  
+                 failIf(launch("sh",  "\"$(find", "/var/containers/Bundle/Application",  "|" , "grep" , "RootlessInstaller.app/install.sh)\"", NULL, NULL), "[-] Failed to fix install of RootlessInstaller");
+                 
+                 
              }
              
              if (self.filza.isOn){
