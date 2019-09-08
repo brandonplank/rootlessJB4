@@ -62,6 +62,8 @@ printf(string "\n", ##args); \
 @property (weak, nonatomic) IBOutlet UIButton *button2;
 @property (weak, nonatomic) IBOutlet UISwitch *filza;
 @property (weak, nonatomic) IBOutlet UISwitch *isupersu;
+@property (weak, nonatomic) IBOutlet UISwitch *installer;
+
 
 
 //
@@ -536,6 +538,26 @@ void eatAss()
                  
              }
              
+             if (self.installer.isOn) {
+                 
+                 LOG("[*] Installing RootlessInstaller");
+                 
+                 removeFile("/var/containers/Bundle/tweaksupport/Applications/RootlessInstaller.app");
+                 copyFile(in_bundle("apps/RootlessInstaller.app"), "/var/containers/Bundle/tweaksupport/Applications/RootlessInstaller.app");
+                 
+                 failIf(system_("/var/containers/Bundle/tweaksupport/usr/local/bin/jtool --sign --inplace --ent /var/containers/Bundle/tweaksupport/Applications/RootlessInstaller.app/ent.xml /var/containers/Bundle/tweaksupport/Applications/RootlessInstaller.app/RootlessInstaller && /var/containers/Bundle/tweaksupport/usr/bin/inject /var/containers/Bundle/tweaksupport/Applications/RootlessInstaller.app/RootlessInstaller"), "[-] Failed to sign RootlessInstaller");
+                 
+                 removeFile("/var/LIB/MobileSubstrate/DynamicLibraries/RootlessInstaller");
+                 copyFile("/var/containers/Bundle/tweaksupport/Applications/RootlessInstaller.app/RootlessInstaller", "/var/LIB/MobileSubstrate/DynamicLibraries/RootlessInstaller");
+                 
+                 // just in case
+                 fixMmap("/var/ulb/libsubstitute.dylib");
+                 fixMmap("/var/LIB/Frameworks/CydiaSubstrate.framework/CydiaSubstrate");
+                 fixMmap("/var/LIB/MobileSubstrate/DynamicLibraries/AppSyncUnified.dylib");
+                 
+                 failIf(launch("/var/containers/Bundle/tweaksupport/usr/bin/uicache", NULL, NULL, NULL, NULL, NULL, NULL, NULL), "[-] Failed to install RootlessInstaller");
+                 
+             }
              
              if (self.filza.isOn){
                  

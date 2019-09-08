@@ -68,14 +68,14 @@
                                 <rect key="frame" x="232" y="459" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Load Tweaks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuA-Zj-GhB">
-                                <rect key="frame" x="37" y="462" width="113" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <rect key="frame" x="37" y="461.5" width="105" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Install Filza" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lEX-dS-zff">
-                                <rect key="frame" x="37" y="498" width="96" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <rect key="frame" x="37" y="500.5" width="89" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -86,8 +86,8 @@
                                 <rect key="frame" x="232" y="537" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Install iSuperSU" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqW-8F-1Mx">
-                                <rect key="frame" x="37" y="537" width="138" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <rect key="frame" x="37" y="539.5" width="128" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -131,13 +131,22 @@
                                     <action selector="creds:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L0l-zD-q6h"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UVq-JS-t6q">
+                                <rect key="frame" x="230" y="423" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Install RootlessInstaller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qXf-oj-7Do">
+                                <rect key="frame" x="37" y="425.5" width="185" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="lqW-8F-1Mx" firstAttribute="top" secondItem="lEX-dS-zff" secondAttribute="bottom" constant="15" id="04T-pq-1CC"/>
                             <constraint firstItem="XEC-ka-kwG" firstAttribute="top" secondItem="Dja-7w-Nk4" secondAttribute="bottom" constant="8" id="0Ry-1r-TmY"/>
                             <constraint firstItem="12F-RD-pLP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="2jK-SN-qe9"/>
                             <constraint firstItem="lqW-8F-1Mx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="4yF-33-T7V"/>
+                            <constraint firstItem="lqW-8F-1Mx" firstAttribute="top" secondItem="lEX-dS-zff" secondAttribute="bottom" constant="17.5" id="80c-Yr-Oym"/>
                             <constraint firstItem="VoK-JN-4QX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9yn-RJ-bLn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lqW-8F-1Mx" secondAttribute="bottom" constant="7" id="AQh-hY-YMA"/>
                             <constraint firstItem="agm-a4-A6j" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Bu2-WO-gSc"/>
@@ -145,13 +154,17 @@
                             <constraint firstItem="Dja-7w-Nk4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="88" id="GVu-gM-H95"/>
                             <constraint firstItem="xAv-OS-tja" firstAttribute="top" secondItem="AEQ-zJ-RXd" secondAttribute="bottom" constant="8" id="JeS-B6-ipp"/>
                             <constraint firstItem="VoK-JN-4QX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="OA7-os-qu1"/>
+                            <constraint firstItem="nuA-Zj-GhB" firstAttribute="top" secondItem="qXf-oj-7Do" secondAttribute="bottom" constant="14.5" id="RpV-hl-Cve"/>
                             <constraint firstItem="VoK-JN-4QX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Txs-dh-and"/>
                             <constraint firstItem="XEC-ka-kwG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VtZ-xR-4dd"/>
                             <constraint firstItem="agm-a4-A6j" firstAttribute="top" secondItem="79M-iK-ihZ" secondAttribute="bottom" constant="8" id="WnZ-GF-E7L"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xAv-OS-tja" secondAttribute="trailing" constant="39" id="XV4-hD-eqs"/>
-                            <constraint firstItem="lEX-dS-zff" firstAttribute="top" secondItem="nuA-Zj-GhB" secondAttribute="bottom" constant="12" id="a2b-pN-Bhf"/>
+                            <constraint firstItem="qXf-oj-7Do" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="c70-NF-9k3"/>
                             <constraint firstItem="RLd-Bm-j39" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="cb7-Pc-7e2"/>
                             <constraint firstItem="Dja-7w-Nk4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f1F-mj-GH5"/>
+                            <constraint firstItem="lEX-dS-zff" firstAttribute="top" secondItem="nuA-Zj-GhB" secondAttribute="bottom" constant="17.5" id="fP1-NF-2E4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UVq-JS-t6q" secondAttribute="trailing" constant="41" id="fnF-cM-wxu"/>
+                            <constraint firstItem="AEQ-zJ-RXd" firstAttribute="top" secondItem="UVq-JS-t6q" secondAttribute="bottom" constant="5" id="gqq-EF-9oJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RLd-Bm-j39" secondAttribute="trailing" constant="39" id="hdp-xh-H8B"/>
                             <constraint firstAttribute="bottom" secondItem="12F-RD-pLP" secondAttribute="bottom" id="kGK-Bv-efV"/>
                             <constraint firstItem="79M-iK-ihZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mee-zP-xAo"/>
@@ -170,6 +183,7 @@
                         <outlet property="button" destination="79M-iK-ihZ" id="bPn-RT-GwR"/>
                         <outlet property="button2" destination="agm-a4-A6j" id="PQQ-eg-2oB"/>
                         <outlet property="filza" destination="xAv-OS-tja" id="5zr-2z-B4O"/>
+                        <outlet property="installer" destination="UVq-JS-t6q" id="IFx-o1-jhk"/>
                         <outlet property="isupersu" destination="RLd-Bm-j39" id="EbA-qR-oig"/>
                         <outlet property="tweaks" destination="AEQ-zJ-RXd" id="wt7-8a-VUd"/>
                     </connections>
