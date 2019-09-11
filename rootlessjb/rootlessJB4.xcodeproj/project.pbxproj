@@ -181,6 +181,13 @@
 			path = StoryBoards;
 			sourceTree = "<group>";
 		};
+		880D0CC2232988AB003CB5CB /* SockPuppet3 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SockPuppet3;
+			sourceTree = "<group>";
+		};
 		8820D19423171E2000697A34 = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +250,7 @@
 		8820D1D323171E3A00697A34 /* Exploits */ = {
 			isa = PBXGroup;
 			children = (
+				880D0CC2232988AB003CB5CB /* SockPuppet3 */,
 				880D0CA42328607E003CB5CB /* SockPort3 */,
 			);
 			path = Exploits;
@@ -577,6 +585,7 @@
 				DEVELOPMENT_TEAM = W7J462TP2V;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/rootlessJB4/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -606,6 +615,7 @@
 				DEVELOPMENT_TEAM = W7J462TP2V;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/rootlessJB4/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
