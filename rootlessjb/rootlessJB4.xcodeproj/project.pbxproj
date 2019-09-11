@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		880D0CA123285E62003CB5CB /* IOKit.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D0C9E23285E62003CB5CB /* IOKit.tbd */; };
-		880D0CA223285E62003CB5CB /* jelbrekLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D0C9F23285E62003CB5CB /* jelbrekLib.a */; };
 		880D0CA323285E62003CB5CB /* libjb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D0CA023285E62003CB5CB /* libjb.a */; };
 		880D0CA82328619E003CB5CB /* offsetsDump.c in Sources */ = {isa = PBXBuildFile; fileRef = 880D0CA72328619E003CB5CB /* offsetsDump.c */; };
 		880D0CAA232861AF003CB5CB /* insert_dylib.c in Sources */ = {isa = PBXBuildFile; fileRef = 880D0CA9232861AF003CB5CB /* insert_dylib.c */; };
@@ -16,6 +14,8 @@
 		880D0CBC2328759A003CB5CB /* bins in Resources */ = {isa = PBXBuildFile; fileRef = 880D0CBB23287599003CB5CB /* bins */; };
 		880D0CBE232875A1003CB5CB /* tars in Resources */ = {isa = PBXBuildFile; fileRef = 880D0CBD232875A1003CB5CB /* tars */; };
 		880D0CC0232875A7003CB5CB /* apps in Resources */ = {isa = PBXBuildFile; fileRef = 880D0CBF232875A7003CB5CB /* apps */; };
+		880D0CD32329A498003CB5CB /* jelbrekLib.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 880D0CD22329A48B003CB5CB /* jelbrekLib.dylib */; };
+		880D0CD42329A4AC003CB5CB /* jelbrekLib.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D0CD22329A48B003CB5CB /* jelbrekLib.dylib */; };
 		8820D1A223171E2000697A34 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8820D1A123171E2000697A34 /* AppDelegate.m */; };
 		8820D1A523171E2000697A34 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8820D1A423171E2000697A34 /* ViewController.m */; };
 		8820D1A823171E2000697A34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8820D1A623171E2000697A34 /* Main.storyboard */; };
@@ -48,8 +48,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		880D0C9E23285E62003CB5CB /* IOKit.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = IOKit.tbd; sourceTree = "<group>"; };
-		880D0C9F23285E62003CB5CB /* jelbrekLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = jelbrekLib.a; sourceTree = "<group>"; };
 		880D0CA023285E62003CB5CB /* libjb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjb.a; sourceTree = "<group>"; };
 		880D0CA523286185003CB5CB /* vnode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vnode.h; sourceTree = "<group>"; };
 		880D0CA623286190003CB5CB /* offsetsDump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = offsetsDump.h; sourceTree = "<group>"; };
@@ -62,6 +60,10 @@
 		880D0CBB23287599003CB5CB /* bins */ = {isa = PBXFileReference; lastKnownFileType = folder; path = bins; sourceTree = "<group>"; };
 		880D0CBD232875A1003CB5CB /* tars */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tars; sourceTree = "<group>"; };
 		880D0CBF232875A7003CB5CB /* apps */ = {isa = PBXFileReference; lastKnownFileType = folder; path = apps; sourceTree = "<group>"; };
+		880D0CC92329A1B0003CB5CB /* jelbrekLib.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = jelbrekLib.dylib; path = rootlessJB4/jelbrekLib.dylib; sourceTree = "<group>"; };
+		880D0CCB2329A1D4003CB5CB /* jelbrekLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jelbrekLib.h; sourceTree = "<group>"; };
+		880D0CD02329A34A003CB5CB /* jelbrekLib.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = jelbrekLib.dylib; path = rootlessJB4/dylibs/jelbrekLib.dylib; sourceTree = "<group>"; };
+		880D0CD22329A48B003CB5CB /* jelbrekLib.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = jelbrekLib.dylib; sourceTree = "<group>"; };
 		8820D19D23171E2000697A34 /* rootlessJB4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rootlessJB4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8820D1A023171E2000697A34 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8820D1A123171E2000697A34 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -91,7 +93,6 @@
 		8820D1F32317323000697A34 /* IOReturn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOReturn.h; sourceTree = "<group>"; };
 		8820D1F42317323000697A34 /* IOTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOTypes.h; sourceTree = "<group>"; };
 		8820D1F52317323000697A34 /* OSMessageNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSMessageNotification.h; sourceTree = "<group>"; };
-		885BB1DB23174B2B0048F2B3 /* jelbrekLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jelbrekLib.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +100,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				880D0CD42329A4AC003CB5CB /* jelbrekLib.dylib in Frameworks */,
 				880D0CA323285E62003CB5CB /* libjb.a in Frameworks */,
-				880D0CA123285E62003CB5CB /* IOKit.tbd in Frameworks */,
-				880D0CA223285E62003CB5CB /* jelbrekLib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,8 +125,7 @@
 		880D0C9D23285E62003CB5CB /* libs */ = {
 			isa = PBXGroup;
 			children = (
-				880D0C9E23285E62003CB5CB /* IOKit.tbd */,
-				880D0C9F23285E62003CB5CB /* jelbrekLib.a */,
+				880D0CCB2329A1D4003CB5CB /* jelbrekLib.h */,
 				880D0CA023285E62003CB5CB /* libjb.a */,
 			);
 			path = libs;
@@ -188,11 +187,21 @@
 			path = SockPuppet3;
 			sourceTree = "<group>";
 		};
+		880D0CC82329A1AF003CB5CB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				880D0CD02329A34A003CB5CB /* jelbrekLib.dylib */,
+				880D0CC92329A1B0003CB5CB /* jelbrekLib.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8820D19423171E2000697A34 = {
 			isa = PBXGroup;
 			children = (
 				8820D19F23171E2000697A34 /* rootlessJB4 */,
 				8820D19E23171E2000697A34 /* Products */,
+				880D0CC82329A1AF003CB5CB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -209,6 +218,7 @@
 		8820D19F23171E2000697A34 /* rootlessJB4 */ = {
 			isa = PBXGroup;
 			children = (
+				880D0CD22329A48B003CB5CB /* jelbrekLib.dylib */,
 				880D0CBF232875A7003CB5CB /* apps */,
 				880D0CBD232875A1003CB5CB /* tars */,
 				880D0CBB23287599003CB5CB /* bins */,
@@ -237,7 +247,6 @@
 				880D0CA623286190003CB5CB /* offsetsDump.h */,
 				880D0CA72328619E003CB5CB /* offsetsDump.c */,
 				8820D1E3231720E100697A34 /* kernel_memory.c */,
-				885BB1DB23174B2B0048F2B3 /* jelbrekLib.h */,
 				8820D1E4231720E100697A34 /* kernel_memory.h */,
 				8820D1E62317216E00697A34 /* offsets.m */,
 				8820D1E72317216E00697A34 /* offsets.h */,
@@ -371,6 +380,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				880D0CD32329A498003CB5CB /* jelbrekLib.dylib in Resources */,
 				880D0CC0232875A7003CB5CB /* apps in Resources */,
 				880D0CBC2328759A003CB5CB /* bins in Resources */,
 				8820D1AD23171E2500697A34 /* LaunchScreen.storyboard in Resources */,
@@ -589,11 +599,14 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					"@executable_path/dylibs",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/rootlessJB4/Headers",
 					"$(PROJECT_DIR)/rootlessJB4/libs",
+					"$(PROJECT_DIR)/rootlessJB4",
+					"$(PROJECT_DIR)/rootlessJB4/dylibs",
 				);
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -619,11 +632,14 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					"@executable_path/dylibs",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/rootlessJB4/Headers",
 					"$(PROJECT_DIR)/rootlessJB4/libs",
+					"$(PROJECT_DIR)/rootlessJB4",
+					"$(PROJECT_DIR)/rootlessJB4/dylibs",
 				);
 				OTHER_LDFLAGS = (
 					"-framework",

@@ -65,7 +65,7 @@ struct hash_entry_t {
     uint16_t start;
 } __attribute__((packed));
 
-typedef uint8_t hash_t[20];
+//typedef uint8_t hash_t[20];
 
 extern hash_t *allhash;
 extern unsigned numhash;

@@ -127,7 +127,7 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
         });
         
         
-        init_with_kbase(tfp0, kernel_base);
+        init_with_kbase(tfp0, kernel_base, NULL);
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self->_jbtext setTitle:@"Started jelbrekLib!" forState:UIControlStateNormal];
@@ -763,7 +763,7 @@ NSArray *plists;
         });
         
         
-        init_with_kbase(tfp0, kernel_base);
+        init_with_kbase(tfp0, kernel_base, NULL);
         
         rootify(getpid());
         

@@ -1,7 +1,12 @@
+typedef int (*kexecFunc)(uint64_t function, size_t argument_count, ...);
+typedef char hash_t[20];
 
 extern uint32_t KASLR_Slide;
 extern uint64_t KernelBase;
 extern mach_port_t TFP0;
+extern kexecFunc kernel_exec;
+
+typedef bool BOOL;
 
 /*
  Purpose: Initialize jelbrekLib (first thing you have to call)
@@ -13,8 +18,9 @@ extern mach_port_t TFP0;
     3: patchfinder didn't initialize properly
     4: kernelSymbolFinder didn't initialize properly
  */
+typedef int (*kexecFunc)(uint64_t function, size_t argument_count, ...);
 int init_jelbrek(mach_port_t tfpzero);
-int init_with_kbase(mach_port_t tfpzero, uint64_t kernelBase); // iOS 12
+int init_with_kbase(mach_port_t tfpzero, uint64_t kernelBase, kexecFunc kexec); // iOS 12
 
 /*
  Purpose: Free memory used by jelbrekLib & clean up (last thing you have to call)
@@ -37,6 +43,19 @@ void term_jelbrek(void);
      7: file mmap() failed
 */
 int trustbin(const char *path);
+int trust_hash(hash_t hash);
+
+/*
+ Purpose:
+    Bypass all codesign checks for a macho. Binary can be signed with SHA1 or SHA256
+ Parameters:
+    A path to a macho
+ Return values:
+    -1: error
+    0: success
+ */
+
+int bypassCodeSign(const char *macho);
 
 /*
  Purpose:
@@ -237,6 +256,16 @@ uint64_t getVnodeAtPath(const char *path);
 
 /*
  Purpose:
+    Same effect as "ln -sf replacement original" but not persistent through reboots
+ Parameters:
+    "original": path you wish to patch
+    "replacement": where to link the original path
+    vnode1 & vnode2: pointers where addresses of the two files vnodes will be stored OR NULL
+ */
+void copyFileInMemory(char *original, char *replacement, uint64_t *vnode1, uint64_t *vnode2);
+
+/*
+ Purpose:
     Do a hex dump I guess
  Parameters:
     Address in kernel from where to get data
@@ -339,7 +368,7 @@ int snapshot_check(const char *vol, const char *name);
 
 /*
  Purpose:
-    Patchfinding (by xerub & ninjaprawn)
+    Patchfinding (by xerub & ninjaprawn & me)
  */
 uint64_t Find_allproc(void);
 uint64_t Find_add_x0_x0_0x40_ret(void);
@@ -349,6 +378,7 @@ uint64_t Find_bcopy(void);
 uint64_t Find_rootvnode(void);
 uint64_t Find_trustcache(void);
 uint64_t Find_amficache(void);
+uint64_t Find_pmap_load_trust_cache_ppl(void);
 uint64_t Find_OSBoolean_True(void);
 uint64_t Find_OSBoolean_False(void);
 uint64_t Find_zone_map_ref(void);
@@ -359,6 +389,25 @@ uint64_t Find_bootargs(void);
 uint64_t Find_vfs_context_current(void);
 uint64_t Find_vnode_lookup(void);
 uint64_t Find_vnode_put(void);
+uint64_t Find_cs_gen_count(void);
+uint64_t Find_cs_validate_csblob(void);
+uint64_t Find_kalloc_canblock(void);
+uint64_t Find_cs_blob_allocate_site(void);
+uint64_t Find_kfree(void);
+uint64_t Find_cs_find_md(void);
+// PAC
+uint64_t Find_l2tp_domain_module_start(void);
+uint64_t Find_l2tp_domain_module_stop(void);
+uint64_t Find_l2tp_domain_inited(void);
+uint64_t Find_sysctl_net_ppp_l2tp(void);
+uint64_t Find_sysctl_unregister_oid(void);
+uint64_t Find_mov_x0_x4__br_x5(void);
+uint64_t Find_mov_x9_x0__br_x1(void);
+uint64_t Find_mov_x10_x3__br_x6(void);
+uint64_t Find_kernel_forge_pacia_gadget(void);
+uint64_t Find_kernel_forge_pacda_gadget(void);
+uint64_t Find_IOUserClient_vtable(void);
+uint64_t Find_IORegistryEntry__getRegistryEntryID(void);
 
 /*
  Purpose:
@@ -522,3 +571,14 @@ BOOL hidePath(char *path);
     false: Failure
  */
 BOOL fixMmap(char *path);
+
+/*
+ Purpose:
+    Get fg_data for a file descriptor (a struct vnode for files, struct socket for sockets, struct pipe for pipes etc...)
+ Parameters:
+    The file descriptor
+    The pid the file descriptor belongs to
+ Return value:
+    proc->p_fd->fd_ofiles[fd]->fproc->fg_data;
+ */
+uint64_t dataForFD(int fd, int pid);
