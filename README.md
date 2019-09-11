@@ -16,20 +16,7 @@ Blah blah, read this: [How to make a jailbreak without a filesystem remount as r
 
 - SSH into your device and run these following commands
 
-killall -9 RootlessInstaller
-# Copy application
-ROOTLESSINSTALLER=$0
-ROOTLESSINSTALLER=${ROOTLESSINSTALLER%/*}
-cp -R $ROOTLESSINSTALLER /var/Apps/RootlessInstaller.app
-rm -rf ${ROOTLESSINSTALLER%/*}
-ROOTLESSINSTALLER="/var/Apps/RootlessInstaller.app"
-# Install application
-jtool --sign --inplace --ent "$ROOTLESSINSTALLER/ent.xml" "$ROOTLESSINSTALLER/RootlessInstaller"
-uicache
-ROOTLESSINSTALLER=$(find /var/containers/Bundle/Application | grep RootlessInstaller.app/RootlessInstaller)
-inject $ROOTLESSINSTALLER
-chown root $ROOTLESSINSTALLER
-chmod 6755 $ROOTLESSINSTALLER
+- sh /var/mobile/install.sh
 
 - After you do that, clicking get root it will no longer give you a error in the app.
 
