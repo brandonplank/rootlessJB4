@@ -14,8 +14,8 @@
 		880D0CBC2328759A003CB5CB /* bins in Resources */ = {isa = PBXBuildFile; fileRef = 880D0CBB23287599003CB5CB /* bins */; };
 		880D0CBE232875A1003CB5CB /* tars in Resources */ = {isa = PBXBuildFile; fileRef = 880D0CBD232875A1003CB5CB /* tars */; };
 		880D0CC0232875A7003CB5CB /* apps in Resources */ = {isa = PBXBuildFile; fileRef = 880D0CBF232875A7003CB5CB /* apps */; };
-		880D0CD32329A498003CB5CB /* jelbrekLib.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 880D0CD22329A48B003CB5CB /* jelbrekLib.dylib */; };
-		880D0CD42329A4AC003CB5CB /* jelbrekLib.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D0CD22329A48B003CB5CB /* jelbrekLib.dylib */; };
+		880D0CD92329BC5C003CB5CB /* jelbrekLib.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D0CD62329BB22003CB5CB /* jelbrekLib.dylib */; };
+		880D0CDA2329BC61003CB5CB /* jelbrekLib.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 880D0CD62329BB22003CB5CB /* jelbrekLib.dylib */; };
 		8820D1A223171E2000697A34 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8820D1A123171E2000697A34 /* AppDelegate.m */; };
 		8820D1A523171E2000697A34 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8820D1A423171E2000697A34 /* ViewController.m */; };
 		8820D1A823171E2000697A34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8820D1A623171E2000697A34 /* Main.storyboard */; };
@@ -63,7 +63,7 @@
 		880D0CC92329A1B0003CB5CB /* jelbrekLib.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = jelbrekLib.dylib; path = rootlessJB4/jelbrekLib.dylib; sourceTree = "<group>"; };
 		880D0CCB2329A1D4003CB5CB /* jelbrekLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jelbrekLib.h; sourceTree = "<group>"; };
 		880D0CD02329A34A003CB5CB /* jelbrekLib.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = jelbrekLib.dylib; path = rootlessJB4/dylibs/jelbrekLib.dylib; sourceTree = "<group>"; };
-		880D0CD22329A48B003CB5CB /* jelbrekLib.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = jelbrekLib.dylib; sourceTree = "<group>"; };
+		880D0CD62329BB22003CB5CB /* jelbrekLib.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = jelbrekLib.dylib; sourceTree = "<group>"; };
 		8820D19D23171E2000697A34 /* rootlessJB4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rootlessJB4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8820D1A023171E2000697A34 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8820D1A123171E2000697A34 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				880D0CD42329A4AC003CB5CB /* jelbrekLib.dylib in Frameworks */,
+				880D0CD92329BC5C003CB5CB /* jelbrekLib.dylib in Frameworks */,
 				880D0CA323285E62003CB5CB /* libjb.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,7 +218,7 @@
 		8820D19F23171E2000697A34 /* rootlessJB4 */ = {
 			isa = PBXGroup;
 			children = (
-				880D0CD22329A48B003CB5CB /* jelbrekLib.dylib */,
+				880D0CD62329BB22003CB5CB /* jelbrekLib.dylib */,
 				880D0CBF232875A7003CB5CB /* apps */,
 				880D0CBD232875A1003CB5CB /* tars */,
 				880D0CBB23287599003CB5CB /* bins */,
@@ -380,7 +380,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				880D0CD32329A498003CB5CB /* jelbrekLib.dylib in Resources */,
+				880D0CDA2329BC61003CB5CB /* jelbrekLib.dylib in Resources */,
 				880D0CC0232875A7003CB5CB /* apps in Resources */,
 				880D0CBC2328759A003CB5CB /* bins in Resources */,
 				8820D1AD23171E2500697A34 /* LaunchScreen.storyboard in Resources */,
@@ -591,6 +591,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W7J462TP2V;
 				ENABLE_BITCODE = NO;
@@ -616,6 +617,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bp.rootlessJB4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -624,6 +626,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W7J462TP2V;
 				ENABLE_BITCODE = NO;
@@ -649,6 +652,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bp.rootlessJB4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
