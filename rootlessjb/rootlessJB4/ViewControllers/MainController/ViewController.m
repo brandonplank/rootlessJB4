@@ -103,6 +103,9 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
 }
 
 - (IBAction)jailbreak:(id)sender {
+    
+    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul), ^{
         
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -741,6 +744,9 @@ NSArray *plists;
 
 
 - (IBAction)uninstall:(id)sender {
+    
+    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul), ^{
         
         
