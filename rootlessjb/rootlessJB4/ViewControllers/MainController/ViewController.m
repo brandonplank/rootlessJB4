@@ -250,14 +250,14 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
         //---- different tools ----//
         
         if (!fileExists("/var/bin/strings")) {
+            FILE *dpkg = fopen((char*)in_bundle("tars/dpkg-rootless.tar"), "r");
+            untar(dpkg, "/");
+            fclose(dpkg);
+            
             chdir("/");
             FILE *essentials = fopen((char*)in_bundle("tars/bintools.tar"), "r");
             untar(essentials, "/");
             fclose(essentials);
-            
-            FILE *dpkg = fopen((char*)in_bundle("tars/dpkg-rootless.tar"), "r");
-            untar(dpkg, "/");
-            fclose(dpkg);
         }
         
         //---- update dropbear ----//
