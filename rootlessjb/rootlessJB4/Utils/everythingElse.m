@@ -50,20 +50,26 @@ uint64_t find_kbase()
 
 bool runExploit()
 {
-    tfp0 = get_tfp0();
     
-    if (MACH_PORT_VALID(tfp0))
-    {
-        kernel_base = find_kbase();
-        kernel_slide = (kernel_base - 0xFFFFFFF007004000);
-        LOG("TFP0: 0x%x", tfp0);
-        LOG("KERNEL BASE: 0x%016llx", kernel_base);
-        LOG("KERNEL SLIDE: 0x%016llx", kernel_slide);
-        
-        return true;
+    mach_port_t tmp;
+    kern_return_t kRet = host_get_special_port(mach_host_self(), 0, 4, &tmp);
+    if (kRet == KERN_SUCCESS && MACH_PORT_VALID(tmp)) {
+        tfp0 = tmp;
+        rebuild(tmp);
     } else {
-        return false;
+        tfp0 = get_tfp0();
+        if (!MACH_PORT_VALID(tfp0)) {
+            goto err;
+        }
     }
+
+    kernel_base = find_kbase();
+    kernel_slide = (kernel_base - 0xFFFFFFF007004000);
+    
+success:
+    return true;
+err:
+    return false;
 }
 
 

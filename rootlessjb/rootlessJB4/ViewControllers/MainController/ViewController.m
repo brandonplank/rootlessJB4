@@ -54,7 +54,7 @@ printf(string "\n", ##args); \
 @property (weak, nonatomic) IBOutlet UISwitch *tweaks;
 @property (weak, nonatomic) IBOutlet UISwitch *filza;
 @property (weak, nonatomic) IBOutlet UISwitch *isupersu;
-@property (weak, nonatomic) IBOutlet UISwitch *rootlessinstaller;
+@property (weak, nonatomic) IBOutlet UISwitch *saily;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *exploitControl;
 
 
@@ -102,6 +102,21 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
     printf("[S] %s\n", p_);
 }
 
+- (void)resignAndInjectToTrustCacheSaily:(NSString *)path ents:(NSString *)ents
+{
+    ents = [NSString stringWithFormat:@"/var/containers/Bundle/tweaksupport/Applications/Saily.app/%@", ents];
+    NSString *p = [NSString stringWithFormat:@"/var/containers/Bundle/tweaksupport/usr/local/bin/jtool --sign --inplace --ent %@ %@", ents, path];
+    char *p_ = (char *)[p UTF8String];
+    system_(p_);
+    
+    
+    p = [NSString stringWithFormat:@"/var/containers/Bundle/tweaksupport/usr/bin/inject %@", path];
+    char *pp_ = (char *)[p UTF8String];
+    system_(pp_);
+    
+    printf("[S] %s\n", p_);
+}
+
 - (IBAction)jailbreak:(id)sender {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul), ^{
         
@@ -118,8 +133,7 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
         
         runExploit();
         
-        //escapeSandbox();
-        
+        escapeSandbox();
         
         
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -128,8 +142,7 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
         });
         
         
-        init_with_kbase(tfp0, kernel_base, NULL);
-        unsandbox(getpid());
+        init_with_kbase(tfp0, kernel_base);
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self->_jbtext setTitle:@"Started jelbrekLib!" forState:UIControlStateNormal];
@@ -526,26 +539,30 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
                 
             }
             
-            if (self.rootlessinstaller.isOn) {
+            if (self.saily.isOn) {
                 
                 LOG("[*] Installing RootlessInstaller");
                 
-                removeFile("/var/containers/Bundle/tweaksupport/Applications/RootlessInstaller.app");
-                copyFile(in_bundle("apps/RootlessInstaller.app"), "/var/containers/Bundle/tweaksupport/Applications/RootlessInstaller.app");
+                removeFile("/var/containers/Bundle/tweaksupport/Applications/Saily.app");
+                copyFile(in_bundle("apps/Saily.app"), "/var/containers/Bundle/tweaksupport/Applications/Saily.app");
                 
-                failIf(system_("/var/containers/Bundle/tweaksupport/usr/local/bin/jtool --sign --inplace --ent /var/containers/Bundle/tweaksupport/Applications/RootlessInstaller.app/ent.xml /var/containers/Bundle/tweaksupport/Applications/RootlessInstaller.app/RootlessInstaller && /var/containers/Bundle/tweaksupport/usr/bin/inject /var/containers/Bundle/tweaksupport/Applications/RootlessInstaller.app/RootlessInstaller"), "[-] Failed to sign RootlessInstaller");
+                failIf(system_("/var/containers/Bundle/tweaksupport/usr/local/bin/jtool --sign --inplace --ent /var/containers/Bundle/tweaksupport/Applications/Saily.app/ent.xml /var/containers/Bundle/tweaksupport/Applications/Saily.app/Saily && /var/containers/Bundle/tweaksupport/usr/bin/inject /var/containers/Bundle/tweaksupport/Applications/Saily.app/Saily"), "[-] Failed to sign Saily.app");
                 
-                removeFile("/var/LIB/MobileSubstrate/DynamicLibraries/RootlessInstaller");
-                copyFile("/var/containers/Bundle/tweaksupport/Applications/RootlessInstaller.app/RootlessInstaller", "/var/LIB/MobileSubstrate/DynamicLibraries/RootlessInstaller");
+                removeFile("/var/LIB/MobileSubstrate/DynamicLibraries/Saily");
+                copyFile("/var/containers/Bundle/tweaksupport/Applications/Saily.app/Saily", "/var/LIB/MobileSubstrate/DynamicLibraries/Saily.app");
+                
+                [self resignAndInjectToTrustCache:@"/var/containers/Bundle/tweaksupport/Applications/Saily.app/Saily" ents:@"ent.xml"];
+                
+                
+                
                 
                 // just in case
                 fixMmap("/var/ulb/libsubstitute.dylib");
                 fixMmap("/var/LIB/Frameworks/CydiaSubstrate.framework/CydiaSubstrate");
                 fixMmap("/var/LIB/MobileSubstrate/DynamicLibraries/AppSyncUnified.dylib");
                 
-                failIf(launch("/var/containers/Bundle/tweaksupport/usr/bin/uicache", NULL, NULL, NULL, NULL, NULL, NULL, NULL), "[-] Failed to install RootlessInstaller");
+                failIf(launch("/var/containers/Bundle/tweaksupport/usr/bin/uicache", NULL, NULL, NULL, NULL, NULL, NULL, NULL), "[-] Failed to install Saily.app");
                 
-                failIf(launch("sh",  "\"$(find", "/var/containers/Bundle/Application",  "|" , "grep" , "RootlessInstaller.app/install.sh)\"", NULL, NULL), "[-] Failed to fix install of RootlessInstaller");
                 
                 
             }
@@ -756,7 +773,7 @@ NSArray *plists;
         
         runExploit();
         
-        //escapeSandbox();
+        escapeSandbox();
         
         
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -765,8 +782,7 @@ NSArray *plists;
         });
         
         
-        init_with_kbase(tfp0, kernel_base, NULL);
-        unsandbox(getpid());
+        init_with_kbase(tfp0, kernel_base);
         
         rootify(getpid());
         
@@ -808,16 +824,19 @@ NSArray *plists;
             
         });
         
+        sleep(5);
+        exit(0);
+        
     });
     
 }
 
 
 - (IBAction)credits:(id)sender {
-    NSString *message = [NSString stringWithFormat:@"Jake James, Creator of rootlessJB\n\niOS 12.2 & 12.4 support by Brandon Plank(@BrandonD3V)\n\nExploit by Jake James\n\nKernel Base and kernel slide finder by @Chr0nicT."];
+    NSString *message = [NSString stringWithFormat:@"Jake James, Creator of rootlessJB\n\niOS 12.2 & 12.4 support by Brandon Plank(@BrandonD3V)\n\nExploit by Jake James\n\nKernel Base and kernel slide finder by @Chr0nicT\n\nSaily support by Lakr."];
     
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Credits" message:message preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *Done = [UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action){
+    UIAlertAction *Done = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action){
         [alertController dismissViewControllerAnimated:true completion:nil];
     }];
     [alertController addAction:Done];

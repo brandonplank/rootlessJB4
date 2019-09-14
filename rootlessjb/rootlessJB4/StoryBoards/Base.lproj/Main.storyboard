@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -74,7 +73,7 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FdE-Ym-udx">
                                 <rect key="frame" x="326" y="792" width="51" height="31"/>
                             </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ne6-ii-HNj">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ne6-ii-HNj">
                                 <rect key="frame" x="326" y="831" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Install iSuperSU" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxU-33-JKa">
@@ -123,8 +122,8 @@
                                     <action selector="credits:" destination="RcO-co-8Fb" eventType="touchUpInside" id="TBz-Gi-CdM"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Install RootlessInstaller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgA-Nr-2dN">
-                                <rect key="frame" x="37" y="720" width="185" height="21.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Install Saily" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgA-Nr-2dN">
+                                <rect key="frame" x="37" y="720" width="90" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -172,7 +171,7 @@
                         <outlet property="filza" destination="FdE-Ym-udx" id="tc6-Dp-RPX"/>
                         <outlet property="isupersu" destination="ne6-ii-HNj" id="q6E-2d-pna"/>
                         <outlet property="jbtext" destination="4hb-HA-LOL" id="bMk-LA-J8X"/>
-                        <outlet property="rootlessinstaller" destination="EWb-Cy-AWL" id="HQZ-vL-DGa"/>
+                        <outlet property="saily" destination="EWb-Cy-AWL" id="NaT-tq-mPD"/>
                         <outlet property="tweaks" destination="TYn-UV-dFr" id="fbb-pi-Jiz"/>
                         <outlet property="unjbtext" destination="C1c-vE-AZc" id="amN-ld-Sa4"/>
                     </connections>
