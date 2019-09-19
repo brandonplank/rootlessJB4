@@ -20,7 +20,6 @@
 #import <dlfcn.h>
 #include "vnode.h"
 #include "offsetsDump.h"
-#import "SockPuppet3.h"
 
 #define LOG(string, args...) do {\
 printf(string "\n", ##args); \
@@ -82,9 +81,6 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
     uname(&u);
     if (strstr(u.machine, "iPad5,")) psize = 0x1000;
     else _host_page_size(mach_host_self(), &psize);
-    
-//    [SockPuppet3 run];
-
 }
 
 
