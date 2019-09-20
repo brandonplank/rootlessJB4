@@ -106,7 +106,6 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
     char *p_ = (char *)[p UTF8String];
     system_(p_);
     
-    
     p = [NSString stringWithFormat:@"/var/containers/Bundle/tweaksupport/usr/bin/inject %@", path];
     char *pp_ = (char *)[p UTF8String];
     system_(pp_);
@@ -123,9 +122,6 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
                            forState:UIControlStateNormal];
             
         });
-        
-        
-        
         
         
         runExploit();
