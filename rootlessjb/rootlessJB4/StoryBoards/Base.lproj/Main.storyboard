@@ -22,6 +22,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="DVT-st-8TF">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rootlessJB4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vA-54-usy">
                                 <rect key="frame" x="59" y="132" width="296.5" height="54"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Regular_Bold" family="Comfortaa" pointSize="48"/>
@@ -29,13 +32,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1c-vE-AZc">
-                                <rect key="frame" x="126" y="422" width="162" height="52"/>
+                                <rect key="frame" x="126" y="418" width="162" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="16i-gd-VDh"/>
+                                    <constraint firstAttribute="height" constant="60" id="16i-gd-VDh"/>
                                     <constraint firstAttribute="width" constant="162" id="rWD-6W-rXe"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Comfortaa-Regular_Bold" family="Comfortaa" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Comfortaa-Regular_Bold" family="Comfortaa" pointSize="18"/>
                                 <state key="normal" title="Uninstall">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -55,37 +58,49 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TYn-UV-dFr">
-                                <rect key="frame" x="326" y="753" width="51" height="31"/>
+                                <rect key="frame" x="326" y="739" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="SAN-zr-hHM"/>
+                                    <constraint firstAttribute="width" constant="49" id="sof-gs-rQL"/>
+                                </constraints>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Load Tweaks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0e-D6-ZuL">
-                                <rect key="frame" x="37" y="761.5" width="94" height="19.5"/>
+                                <rect key="frame" x="37" y="740.5" width="94" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Install Filza" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHa-0D-Kpk">
-                                <rect key="frame" x="37" y="798.5" width="80" height="19.5"/>
+                                <rect key="frame" x="37" y="777.5" width="80" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FdE-Ym-udx">
-                                <rect key="frame" x="326" y="792" width="51" height="31"/>
+                                <rect key="frame" x="326" y="774" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="6LF-bb-i8g"/>
+                                    <constraint firstAttribute="width" constant="49" id="I6k-eE-Dfl"/>
+                                </constraints>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ne6-ii-HNj">
-                                <rect key="frame" x="326" y="831" width="51" height="31"/>
+                                <rect key="frame" x="326" y="809" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="Rzg-Qv-3nq"/>
+                                    <constraint firstAttribute="width" constant="49" id="lUP-Al-hDu"/>
+                                </constraints>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Install iSuperSU" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxU-33-JKa">
-                                <rect key="frame" x="37" y="835.5" width="115" height="19.5"/>
+                                <rect key="frame" x="37" y="814.5" width="115" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hb-HA-LOL">
-                                <rect key="frame" x="126" y="362" width="162" height="52"/>
+                                <rect key="frame" x="126" y="350" width="162" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="eUy-9v-KZM"/>
+                                    <constraint firstAttribute="height" constant="60" id="eUy-9v-KZM"/>
                                     <constraint firstAttribute="width" constant="162" id="z8h-4t-96A"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Comfortaa-Regular_Bold" family="Comfortaa" pointSize="18"/>
@@ -102,13 +117,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zfq-S4-oBn">
-                                <rect key="frame" x="126" y="516" width="162" height="52"/>
+                                <rect key="frame" x="126" y="486" width="162" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="MId-4q-Tuo"/>
+                                    <constraint firstAttribute="height" constant="60" id="MId-4q-Tuo"/>
                                     <constraint firstAttribute="width" constant="162" id="cM0-bM-FFP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Comfortaa-Regular_Bold" family="Comfortaa" pointSize="17"/>
                                 <state key="normal" title="Credits">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -122,44 +137,45 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Install Saily Daemon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgA-Nr-2dN">
-                                <rect key="frame" x="37" y="727.5" width="145.5" height="19.5"/>
+                                <rect key="frame" x="37" y="704" width="145.5" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EWb-Cy-AWL">
-                                <rect key="frame" x="326" y="715" width="51" height="31"/>
+                                <rect key="frame" x="326" y="704" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="49" id="9DM-hi-VWi"/>
+                                    <constraint firstAttribute="height" constant="31" id="amG-DX-IwM"/>
+                                </constraints>
                             </switch>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="DVT-st-8TF">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="0dx-sn-p1o" firstAttribute="trailing" secondItem="FdE-Ym-udx" secondAttribute="trailing" constant="39" id="1R8-8X-zIH"/>
-                            <constraint firstItem="a0e-D6-ZuL" firstAttribute="top" secondItem="qgA-Nr-2dN" secondAttribute="bottom" constant="14.5" id="51Q-82-mH5"/>
+                            <constraint firstItem="0dx-sn-p1o" firstAttribute="bottom" secondItem="ne6-ii-HNj" secondAttribute="bottom" constant="22" id="4LZ-oH-Lsh"/>
+                            <constraint firstItem="a0e-D6-ZuL" firstAttribute="top" secondItem="qgA-Nr-2dN" secondAttribute="bottom" constant="17" id="51Q-82-mH5"/>
                             <constraint firstAttribute="bottom" secondItem="DVT-st-8TF" secondAttribute="bottom" id="5sF-oC-hXK"/>
                             <constraint firstItem="C1c-vE-AZc" firstAttribute="top" secondItem="4hb-HA-LOL" secondAttribute="bottom" constant="8" id="8Le-CQ-olA"/>
                             <constraint firstItem="DVT-st-8TF" firstAttribute="trailing" secondItem="0dx-sn-p1o" secondAttribute="trailing" id="9qu-iS-a7a"/>
                             <constraint firstItem="4hb-HA-LOL" firstAttribute="centerX" secondItem="dmp-cU-YZs" secondAttribute="centerX" id="AFb-Qx-mER"/>
-                            <constraint firstItem="0dx-sn-p1o" firstAttribute="bottom" secondItem="qxU-33-JKa" secondAttribute="bottom" constant="7" id="Ag2-rY-1fk"/>
-                            <constraint firstItem="ne6-ii-HNj" firstAttribute="top" secondItem="FdE-Ym-udx" secondAttribute="bottom" constant="8" id="FFe-IP-upJ"/>
-                            <constraint firstItem="0dx-sn-p1o" firstAttribute="trailing" secondItem="ne6-ii-HNj" secondAttribute="trailing" constant="39" id="HYV-ZP-5T5"/>
-                            <constraint firstItem="FdE-Ym-udx" firstAttribute="top" secondItem="TYn-UV-dFr" secondAttribute="bottom" constant="8" id="IWF-up-wtE"/>
+                            <constraint firstItem="0dx-sn-p1o" firstAttribute="trailing" secondItem="FdE-Ym-udx" secondAttribute="trailing" constant="39" id="AMr-2F-q1p"/>
+                            <constraint firstItem="0dx-sn-p1o" firstAttribute="bottom" secondItem="qxU-33-JKa" secondAttribute="bottom" constant="28" id="Ag2-rY-1fk"/>
+                            <constraint firstItem="0dx-sn-p1o" firstAttribute="trailing" secondItem="TYn-UV-dFr" secondAttribute="trailing" constant="39" id="D7z-wz-lW0"/>
                             <constraint firstItem="4vA-54-usy" firstAttribute="centerX" secondItem="dmp-cU-YZs" secondAttribute="centerX" id="K78-eO-Wbi"/>
                             <constraint firstItem="C1c-vE-AZc" firstAttribute="centerX" secondItem="dmp-cU-YZs" secondAttribute="centerX" id="MWa-aq-BPN"/>
                             <constraint firstItem="DVT-st-8TF" firstAttribute="top" secondItem="dmp-cU-YZs" secondAttribute="top" id="Mns-kw-8Nc"/>
                             <constraint firstItem="eSs-FX-0U3" firstAttribute="centerX" secondItem="dmp-cU-YZs" secondAttribute="centerX" id="OZ4-io-63d"/>
-                            <constraint firstItem="ne6-ii-HNj" firstAttribute="bottom" secondItem="0dx-sn-p1o" secondAttribute="bottom" id="P4l-08-gM2"/>
+                            <constraint firstItem="TYn-UV-dFr" firstAttribute="top" secondItem="EWb-Cy-AWL" secondAttribute="bottom" constant="4" id="Q2X-yf-ft1"/>
                             <constraint firstItem="qxU-33-JKa" firstAttribute="top" secondItem="hHa-0D-Kpk" secondAttribute="bottom" constant="17.5" id="RPe-ZJ-GSX"/>
                             <constraint firstItem="a0e-D6-ZuL" firstAttribute="leading" secondItem="0dx-sn-p1o" secondAttribute="leading" constant="37" id="UdK-th-jn7"/>
-                            <constraint firstItem="TYn-UV-dFr" firstAttribute="top" secondItem="EWb-Cy-AWL" secondAttribute="bottom" constant="7" id="Wda-Wa-gTu"/>
                             <constraint firstItem="DVT-st-8TF" firstAttribute="leading" secondItem="0dx-sn-p1o" secondAttribute="leading" id="ZDi-ac-iFp"/>
-                            <constraint firstItem="0dx-sn-p1o" firstAttribute="trailing" secondItem="EWb-Cy-AWL" secondAttribute="trailing" constant="39" id="a55-3i-pWY"/>
-                            <constraint firstItem="zfq-S4-oBn" firstAttribute="top" secondItem="C1c-vE-AZc" secondAttribute="bottom" constant="42" id="b08-u6-Ubt"/>
-                            <constraint firstItem="0dx-sn-p1o" firstAttribute="trailing" secondItem="TYn-UV-dFr" secondAttribute="trailing" constant="39" id="ewu-ug-K56"/>
+                            <constraint firstItem="ne6-ii-HNj" firstAttribute="top" secondItem="FdE-Ym-udx" secondAttribute="bottom" constant="4" id="Zya-Gv-W9R"/>
+                            <constraint firstItem="zfq-S4-oBn" firstAttribute="top" secondItem="C1c-vE-AZc" secondAttribute="bottom" constant="8" id="b08-u6-Ubt"/>
+                            <constraint firstItem="FdE-Ym-udx" firstAttribute="top" secondItem="TYn-UV-dFr" secondAttribute="bottom" constant="4" id="bZQ-gb-MAj"/>
                             <constraint firstItem="hHa-0D-Kpk" firstAttribute="top" secondItem="a0e-D6-ZuL" secondAttribute="bottom" constant="17.5" id="f17-gz-28c"/>
                             <constraint firstItem="qxU-33-JKa" firstAttribute="leading" secondItem="0dx-sn-p1o" secondAttribute="leading" constant="37" id="gNi-hd-Ml1"/>
+                            <constraint firstItem="0dx-sn-p1o" firstAttribute="trailing" secondItem="ne6-ii-HNj" secondAttribute="trailing" constant="39" id="grA-F2-Wee"/>
+                            <constraint firstItem="0dx-sn-p1o" firstAttribute="trailing" secondItem="EWb-Cy-AWL" secondAttribute="trailing" constant="39" id="jgC-f4-61T"/>
                             <constraint firstItem="hHa-0D-Kpk" firstAttribute="leading" secondItem="0dx-sn-p1o" secondAttribute="leading" constant="37" id="mzX-mZ-1os"/>
                             <constraint firstItem="qgA-Nr-2dN" firstAttribute="leading" secondItem="0dx-sn-p1o" secondAttribute="leading" constant="37" id="npf-Is-nZk"/>
                             <constraint firstItem="4vA-54-usy" firstAttribute="top" secondItem="0dx-sn-p1o" secondAttribute="top" constant="88" id="p4c-B0-wQW"/>
@@ -184,6 +200,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background" width="736" height="1472"/>
+        <image name="background" width="3208" height="3208"/>
     </resources>
 </document>

@@ -847,7 +847,7 @@ NSArray *plists;
 
 
 - (IBAction)credits:(id)sender {
-    NSString *message = [NSString stringWithFormat:@"Jake James, Creator of rootlessJB\n\niOS 12.2 & 12.4 support by Brandon Plank(@BrandonD3V)\n\nSockPuppet exploit by Ned Williamson\n\nSockPort exploit by Jake James\n\nSockPuppet3 exploit by Umang Raghuvanshi\n\nKernel Base and kernel slide finder by @Chr0nicT\n\nSaily support by Lakr."];
+    NSString *message = [NSString stringWithFormat:@"rootlessJB by Jake James\n\niOS 12.2 & 12.4 support by Brandon Plank(@BrandonD3V)\n\nSockPuppet exploit by Ned Williamson\n\nSockPort exploit by Jake James\n\nSockPuppet3 exploit by Umang Raghuvanshi\n\nKernel Base and kernel slide finder by @Chr0nicT\n\nSaily Package Manager by @Lakr233"];
     
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Credits" message:message preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *Done = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action){
@@ -855,7 +855,7 @@ NSArray *plists;
     }];
     [alertController addAction:Done];
     [alertController setPreferredAction:Done];
-    [self presentViewController:alertController animated:false completion:nil];
+    [self presentViewController:alertController animated:true completion:nil];
     
 }
 
