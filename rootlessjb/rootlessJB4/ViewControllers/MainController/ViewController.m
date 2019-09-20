@@ -101,16 +101,19 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
 
 - (void)resignAndInjectToTrustCacheSaily:(NSString *)path ents:(NSString *)ents
 {
-    ents = [NSString stringWithFormat:@"/var/containers/Bundle/tweaksupport/Applications/Saily.app/%@", ents];
-    NSString *p = [NSString stringWithFormat:@"/var/containers/Bundle/tweaksupport/usr/local/bin/jtool --sign --inplace --ent %@ %@", ents, path];
-    char *p_ = (char *)[p UTF8String];
-    system_(p_);
     
-    p = [NSString stringWithFormat:@"/var/containers/Bundle/tweaksupport/usr/bin/inject %@", path];
-    char *pp_ = (char *)[p UTF8String];
-    system_(pp_);
+    printf("[-] Do not install Saily.app in the jailbreak process.\n[-] Dylib and frameworks should not be able to local sign.\n[-] And they do not call fixmMap in their load process.\n");
     
-    printf("[S] %s\n", p_);
+//    ents = [NSString stringWithFormat:@"/var/containers/Bundle/tweaksupport/Applications/Saily.app/%@", ents];
+//    NSString *p = [NSString stringWithFormat:@"/var/containers/Bundle/tweaksupport/usr/local/bin/jtool --sign --inplace --ent %@ %@", ents, path];
+//    char *p_ = (char *)[p UTF8String];
+//    system_(p_);
+//
+//    p = [NSString stringWithFormat:@"/var/containers/Bundle/tweaksupport/usr/bin/inject %@", path];
+//    char *pp_ = (char *)[p UTF8String];
+//    system_(pp_);
+//
+//    printf("[S] %s\n", p_);
 }
 
 - (IBAction)jailbreak:(id)sender {
@@ -533,6 +536,27 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
             }
             
             if (self.saily.isOn) {
+//            if (false) {
+                    
+                dispatch_semaphore_t sem = dispatch_semaphore_create(0);
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"WARNING"
+                                                   message:@"Saily.app should be installed by your resign tools as well as rootless JB itself."
+                                                   preferredStyle:UIAlertControllerStyleAlert];
+                     
+                    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+                    [alert addAction:defaultAction];
+                    [self presentViewController:alert animated:true completion:^{
+                        dispatch_semaphore_signal(sem);
+                    }];
+                    
+                });
+                
+                dispatch_semaphore_wait(sem, 30);
+                
+                goto escapeSaily;
                 
                 LOG("[*] Installing RootlessInstaller");
                 
@@ -545,21 +569,18 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
                 copyFile("/var/containers/Bundle/tweaksupport/Applications/Saily.app/Saily", "/var/LIB/MobileSubstrate/DynamicLibraries/Saily.app");
                 
                 [self resignAndInjectToTrustCache:@"/var/containers/Bundle/tweaksupport/Applications/Saily.app/Saily" ents:@"ent.xml"];
-                
-                
-                
-                
+
                 // just in case
                 fixMmap("/var/ulb/libsubstitute.dylib");
                 fixMmap("/var/LIB/Frameworks/CydiaSubstrate.framework/CydiaSubstrate");
                 fixMmap("/var/LIB/MobileSubstrate/DynamicLibraries/AppSyncUnified.dylib");
                 
+                // The frameworks under Saily also need to be resigned, but its too f*** just use impactor?
+                
                 failIf(launch("/var/containers/Bundle/tweaksupport/usr/bin/uicache", NULL, NULL, NULL, NULL, NULL, NULL, NULL), "[-] Failed to install Saily.app");
                 
-                
-                
             }
-            
+        escapeSaily:
             if (self.filza.isOn){
                 
                 LOG("[*] Installing Filza File Manager");
