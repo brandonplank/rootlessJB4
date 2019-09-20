@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5019957A23354FFE00185F42 /* Comfortaa-VariableFont:wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5019957923354FFE00185F42 /* Comfortaa-VariableFont:wght.ttf */; };
 		880D0CA123285E62003CB5CB /* IOKit.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D0C9E23285E62003CB5CB /* IOKit.tbd */; };
 		880D0CA223285E62003CB5CB /* jelbrekLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D0C9F23285E62003CB5CB /* jelbrekLib.a */; };
 		880D0CA323285E62003CB5CB /* libjb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D0CA023285E62003CB5CB /* libjb.a */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5019957923354FFE00185F42 /* Comfortaa-VariableFont:wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-VariableFont:wght.ttf"; sourceTree = "<group>"; };
 		880D0C9E23285E62003CB5CB /* IOKit.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = IOKit.tbd; sourceTree = "<group>"; };
 		880D0C9F23285E62003CB5CB /* jelbrekLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = jelbrekLib.a; sourceTree = "<group>"; };
 		880D0CA023285E62003CB5CB /* libjb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjb.a; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 		8820D19F23171E2000697A34 /* rootlessJB4 */ = {
 			isa = PBXGroup;
 			children = (
+				5019957923354FFE00185F42 /* Comfortaa-VariableFont:wght.ttf */,
 				880D0CBF232875A7003CB5CB /* apps */,
 				880D0CBD232875A1003CB5CB /* tars */,
 				880D0CBB23287599003CB5CB /* bins */,
@@ -393,6 +396,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5019957A23354FFE00185F42 /* Comfortaa-VariableFont:wght.ttf in Resources */,
 				880D0CC0232875A7003CB5CB /* apps in Resources */,
 				880D0CBC2328759A003CB5CB /* bins in Resources */,
 				8820D1AD23171E2500697A34 /* LaunchScreen.storyboard in Resources */,
