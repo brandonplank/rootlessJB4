@@ -11,6 +11,8 @@
 #include "sockport.h"
 #include "offsets.h"
 #include "kernel_memory.h"
+#import "SockPuppet3.h"
+#import "exploit.h"
 
 
 #define LOG(string, args...) do {\
@@ -23,10 +25,23 @@ uint64_t kernel_base;
 uint64_t task_self_addr_cache;
 uint64_t selfproc_cached;
 
+// SockPuppet3
+uint64_t task_addr_cache;
+
 uint64_t find_kbase()
 {
-    uint64_t task_port_addr = task_self_addr_cache;
-    uint64_t task_addr = rk64(task_port_addr + koffset(KSTRUCT_OFFSET_IPC_PORT_IP_KOBJECT));
+    uint64_t task_addr;
+    switch (selectedExploit) {
+        case RootlessExploitSockPort3: {
+            uint64_t task_port_addr = task_self_addr_cache;
+            task_addr = rk64(task_port_addr + koffset(KSTRUCT_OFFSET_IPC_PORT_IP_KOBJECT));
+            break;
+        }
+        case RootlessExploitSockPuppet3:
+            task_addr = task_addr_cache;
+            break;
+    }
+
     uint64_t itk_space = rk64(task_addr + koffset(KSTRUCT_OFFSET_TASK_ITK_SPACE));
     uint64_t is_table = rk64(itk_space + koffset(KSTRUCT_OFFSET_IPC_SPACE_IS_TABLE));
     
@@ -48,9 +63,7 @@ uint64_t find_kbase()
     return 0;
 }
 
-bool runExploit()
-{
-    
+bool runExploitSockPort3() {
     mach_port_t tmp;
     kern_return_t kRet = host_get_special_port(mach_host_self(), 0, 4, &tmp);
     if (kRet == KERN_SUCCESS && MACH_PORT_VALID(tmp)) {
@@ -65,13 +78,43 @@ bool runExploit()
 
     kernel_base = find_kbase();
     kernel_slide = (kernel_base - 0xFFFFFFF007004000);
-    
+
 success:
     return true;
 err:
     return false;
 }
 
+bool runExploitSockPuppet3() {
+
+    if (![SockPuppet3 run]) {
+        return false;
+    }
+
+    tfp0 = [SockPuppet3 fakeKernelTaskPort];
+    init_kernel_memory(tfp0);
+    task_addr_cache = [SockPuppet3 currentTaskAddress];
+
+    uint64_t itk_space = rk64(task_addr_cache + koffset(KSTRUCT_OFFSET_TASK_ITK_SPACE));
+    uint64_t task_xd = rk64(itk_space + 0x28);
+    uint64_t selfproc = rk64(task_xd + koffset(KSTRUCT_OFFSET_TASK_BSD_INFO));
+    selfproc_cached = selfproc;
+
+    kernel_base = find_kbase();
+    kernel_slide = (kernel_base - 0xFFFFFFF007004000);
+
+    return true;
+}
+
+bool runExploit()
+{
+    switch (selectedExploit) {
+        case RootlessExploitSockPuppet3:
+            return runExploitSockPuppet3();
+        case RootlessExploitSockPort3:
+            return runExploitSockPort3();
+    }
+}
 
 bool escapeSandbox()
 {

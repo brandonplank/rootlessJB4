@@ -28,6 +28,10 @@
 		8820D1E5231720E100697A34 /* kernel_memory.c in Sources */ = {isa = PBXBuildFile; fileRef = 8820D1E3231720E100697A34 /* kernel_memory.c */; };
 		8820D1E82317216E00697A34 /* offsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 8820D1E62317216E00697A34 /* offsets.m */; };
 		8820D1EB231729C300697A34 /* everythingElse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8820D1E9231729C300697A34 /* everythingElse.m */; };
+		FADCDF922333C5FB00C0777D /* SockPuppet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FADCDF902333C5FB00C0777D /* SockPuppet.cpp */; };
+		FADCDF962333C68600C0777D /* Utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FADCDF942333C68500C0777D /* Utility.cpp */; };
+		FADCDF992333C75700C0777D /* SockPuppet3.mm in Sources */ = {isa = PBXBuildFile; fileRef = FADCDF982333C75700C0777D /* SockPuppet3.mm */; };
+		FADCDF9C2333C7FA00C0777D /* exploit.c in Sources */ = {isa = PBXBuildFile; fileRef = FADCDF9B2333C7FA00C0777D /* exploit.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +96,15 @@
 		8820D1F42317323000697A34 /* IOTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOTypes.h; sourceTree = "<group>"; };
 		8820D1F52317323000697A34 /* OSMessageNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSMessageNotification.h; sourceTree = "<group>"; };
 		885BB1DB23174B2B0048F2B3 /* jelbrekLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jelbrekLib.h; sourceTree = "<group>"; };
+		FADCDF902333C5FB00C0777D /* SockPuppet.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SockPuppet.cpp; sourceTree = "<group>"; };
+		FADCDF912333C5FB00C0777D /* SockPuppet.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SockPuppet.hpp; sourceTree = "<group>"; };
+		FADCDF932333C65800C0777D /* SockPuppetStructures.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SockPuppetStructures.h; sourceTree = "<group>"; };
+		FADCDF942333C68500C0777D /* Utility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utility.cpp; sourceTree = "<group>"; };
+		FADCDF952333C68500C0777D /* Utility.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Utility.hpp; sourceTree = "<group>"; };
+		FADCDF972333C75700C0777D /* SockPuppet3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SockPuppet3.h; sourceTree = "<group>"; };
+		FADCDF982333C75700C0777D /* SockPuppet3.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SockPuppet3.mm; sourceTree = "<group>"; };
+		FADCDF9A2333C7FA00C0777D /* exploit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = exploit.h; sourceTree = "<group>"; };
+		FADCDF9B2333C7FA00C0777D /* exploit.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = exploit.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,7 +256,10 @@
 		8820D1D323171E3A00697A34 /* Exploits */ = {
 			isa = PBXGroup;
 			children = (
+				FADCDF8F2333C51200C0777D /* SockPuppet3 */,
 				880D0CA42328607E003CB5CB /* SockPort3 */,
+				FADCDF9A2333C7FA00C0777D /* exploit.h */,
+				FADCDF9B2333C7FA00C0777D /* exploit.c */,
 			);
 			path = Exploits;
 			sourceTree = "<group>";
@@ -258,6 +274,20 @@
 				8820D1F52317323000697A34 /* OSMessageNotification.h */,
 			);
 			path = IOKit;
+			sourceTree = "<group>";
+		};
+		FADCDF8F2333C51200C0777D /* SockPuppet3 */ = {
+			isa = PBXGroup;
+			children = (
+				FADCDF902333C5FB00C0777D /* SockPuppet.cpp */,
+				FADCDF912333C5FB00C0777D /* SockPuppet.hpp */,
+				FADCDF942333C68500C0777D /* Utility.cpp */,
+				FADCDF952333C68500C0777D /* Utility.hpp */,
+				FADCDF932333C65800C0777D /* SockPuppetStructures.h */,
+				FADCDF972333C75700C0777D /* SockPuppet3.h */,
+				FADCDF982333C75700C0777D /* SockPuppet3.mm */,
+			);
+			path = SockPuppet3;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,6 +423,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FADCDF962333C68600C0777D /* Utility.cpp in Sources */,
 				8820D1EB231729C300697A34 /* everythingElse.m in Sources */,
 				8820D1D923171EC100697A34 /* exploit_utilities.c in Sources */,
 				880D0CA82328619E003CB5CB /* offsetsDump.c in Sources */,
@@ -401,10 +432,13 @@
 				8820D1D623171E7100697A34 /* sockport.c in Sources */,
 				8820D1A523171E2000697A34 /* ViewController.m in Sources */,
 				8820D1E82317216E00697A34 /* offsets.m in Sources */,
+				FADCDF922333C5FB00C0777D /* SockPuppet.cpp in Sources */,
 				880D0CAD232861C2003CB5CB /* payload.c in Sources */,
 				8820D1B023171E2500697A34 /* main.m in Sources */,
+				FADCDF992333C75700C0777D /* SockPuppet3.mm in Sources */,
 				8820D1E5231720E100697A34 /* kernel_memory.c in Sources */,
 				8820D1A223171E2000697A34 /* AppDelegate.m in Sources */,
+				FADCDF9C2333C7FA00C0777D /* exploit.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

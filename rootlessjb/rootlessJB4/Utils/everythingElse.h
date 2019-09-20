@@ -20,6 +20,9 @@ extern uint64_t kernel_base;
 extern uint64_t task_self_addr_cache;
 extern uint64_t selfproc_cached;
 
+// SockPuppet3
+extern uint64_t task_addr_cache;
+
 bool runExploit(void);
 bool escapeSandbox(void);
 
