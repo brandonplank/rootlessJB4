@@ -9,7 +9,6 @@
     </dependencies>
     <customFonts key="customFonts">
         <array key="Comfortaa-VariableFont:wght.ttf">
-            <string>Comfortaa-Regular</string>
             <string>Comfortaa-Regular_Bold</string>
         </array>
     </customFonts>
@@ -51,9 +50,9 @@
                                     <action selector="uninstall:" destination="RcO-co-8Fb" eventType="touchUpInside" id="lSt-7z-vc3"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by @Jakeashacks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSs-FX-0U3">
-                                <rect key="frame" x="132.5" y="194" width="149" height="18"/>
-                                <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS 12.0 - 12.1.2 &amp; 12.4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSs-FX-0U3">
+                                <rect key="frame" x="128.5" y="194" width="157.5" height="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
