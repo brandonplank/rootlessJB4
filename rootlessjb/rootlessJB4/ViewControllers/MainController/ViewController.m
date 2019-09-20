@@ -117,11 +117,13 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
 }
 
 - (IBAction)jailbreak:(id)sender {
+    
+    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul), ^{
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_jbtext setTitle:@"Jailbreaking..."
-             
+            [self->_jbtext setTitle:@"-> 1/12"
                            forState:UIControlStateNormal];
             
         });
@@ -133,7 +135,7 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
         
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_jbtext setTitle:@"Exploit done!" forState:UIControlStateNormal];
+            [self->_jbtext setTitle:@"-> 2/12" forState:UIControlStateNormal];
             
         });
         
@@ -141,27 +143,27 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
         init_with_kbase(tfp0, kernel_base);
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_jbtext setTitle:@"Started jelbrekLib!" forState:UIControlStateNormal];
+            [self->_jbtext setTitle:@"-> 3/12" forState:UIControlStateNormal];
             
         });
         
         rootify(getpid());
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_jbtext setTitle:@"Got root!" forState:UIControlStateNormal];
+            [self->_jbtext setTitle:@"-> 4/12" forState:UIControlStateNormal];
             
         });
         
         
         setHSP4();
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_jbtext setTitle:@"Set HSP4!" forState:UIControlStateNormal];
+            [self->_jbtext setTitle:@"-> 5/12" forState:UIControlStateNormal];
             
         });
         
         
         setcsflags(getpid()); // set some csflags
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_jbtext setTitle:@"Set csflags!" forState:UIControlStateNormal];
+            [self->_jbtext setTitle:@"-> 6/12" forState:UIControlStateNormal];
             
         });
         
@@ -169,19 +171,19 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
         platformize(getpid()); // set TF_PLATFORM
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_jbtext setTitle:@"Set platformize!" forState:UIControlStateNormal];
+            [self->_jbtext setTitle:@"-> 7/12" forState:UIControlStateNormal];
             
         });
         
         
         UnlockNVRAM();
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_jbtext setTitle:@"Unclocked nvram!" forState:UIControlStateNormal];
+            [self->_jbtext setTitle:@"-> 8/12" forState:UIControlStateNormal];
             
         });
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_jbtext setTitle:@"Installing bootstrap!" forState:UIControlStateNormal];
+            [self->_jbtext setTitle:@"-> 9/12" forState:UIControlStateNormal];
             
         });
         
@@ -243,7 +245,7 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
             LOG("[+] Installed bootstrap!");
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_jbtext setTitle:@"Installed bootstrap!" forState:UIControlStateNormal];
+                [self->_jbtext setTitle:@"-> 10/12" forState:UIControlStateNormal];
                 
             });
             
@@ -251,7 +253,7 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_jbtext setTitle:@"Doing alot! Hang On!" forState:UIControlStateNormal];
+            [self->_jbtext setTitle:@"-> 11/12" forState:UIControlStateNormal];
             
         });
         
@@ -542,15 +544,18 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     
+                    [[UIApplication sharedApplication] endIgnoringInteractionEvents];
+                    
                     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"WARNING"
                                                    message:@"Saily.app should be installed by your resign tools as well as rootless JB itself."
                                                    preferredStyle:UIAlertControllerStyleAlert];
-                     
-                    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-                    [alert addAction:defaultAction];
-                    [self presentViewController:alert animated:true completion:^{
+
+                    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                        [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
                         dispatch_semaphore_signal(sem);
                     }];
+                    [alert addAction:defaultAction];
+                    [self presentViewController:alert animated:true completion: nil];
                     
                 });
                 
@@ -774,11 +779,14 @@ NSArray *plists;
 
 
 - (IBAction)uninstall:(id)sender {
+    
+    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul), ^{
         
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_unjbtext setTitle:@"Jailbreaking..."
+            [self->_unjbtext setTitle:@"-> 1/3"
              
                             forState:UIControlStateNormal];
             
@@ -791,7 +799,7 @@ NSArray *plists;
         
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_unjbtext setTitle:@"Exploit done!" forState:UIControlStateNormal];
+            [self->_unjbtext setTitle:@"-> 2/3" forState:UIControlStateNormal];
             
         });
         
@@ -829,10 +837,24 @@ NSArray *plists;
         removeFile("/var/lib");
         removeFile("/var/etc");
         removeFile("/var/usr");
+        
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self->_unjbtext setTitle:@"-> 3/3" forState:UIControlStateNormal];
+            
+        });
+        
+        launch("/var/containers/Bundle/tweaksupport/usr/bin/uicache", NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+        NSArray *invalidApps = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/var/Apps" error:nil];
+        for (NSString *app in invalidApps) {
+            NSString *path = [@"/var/Apps" stringByAppendingPathComponent:app];
+            removeFile([path UTF8String]);
+        }
+        
         term_jelbrek();
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_unjbtext setTitle:@"Uninstalled!"
+            [self->_unjbtext setTitle:@"Finished."
              
                             forState:UIControlStateNormal];
             
