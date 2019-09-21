@@ -128,7 +128,7 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
             
         });
         
-        
+        // MARK: EXPLOIT
         runExploit();
         
         escapeSandbox();
@@ -188,7 +188,7 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
         });
         
         
-        
+        // MARK: BOOTSTRAP
         if (!fileExists("/var/containers/Bundle/.installed_rootlessJB3")) {
             
             if (fileExists("/var/containers/Bundle/iosbinpack64")) {
@@ -257,6 +257,8 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
             
         });
         
+        
+        // MARK: JBDaemon
         //---- for jailbreakd & amfid ----//
         failIf(dumpOffsetsToFile("/var/containers/Bundle/tweaksupport/offsets.data"), "[-] Failed to save offsets");
         
@@ -273,6 +275,7 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
             fclose(dpkg);
         }
         
+        // MARK: OPENSSH
         //---- update dropbear ----//
         chdir("/var/containers/Bundle/");
         
@@ -284,7 +287,7 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
         fclose(fixed_dropbear);
         
         //---- update jailbreakd ----//
-        
+        // MARK: JBDaemon Update
         removeFile("/var/containers/Bundle/iosbinpack64/bin/jailbreakd");
         if (!fileExists(in_bundle("bins/jailbreakd"))) {
             chdir(in_bundle("bins/"));
@@ -336,7 +339,7 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
         removeFile("/var/log/pspawn_payload_xpcproxy.log");
         
         //---- codesign patch ----//
-        
+        // MARK: CODESIGN
         if (!fileExists(in_bundle("bins/tester"))) {
             chdir(in_bundle("bins/"));
             
@@ -366,6 +369,7 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
         
         prepare_payload(); // this will chmod 777 everything
         
+        // MARK: SETUP
         //----- setup SSH -----//
         mkdir("/var/dropbear", 0777);
         removeFile("/var/profile");
@@ -442,7 +446,7 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
             close(open("/var/containers/Bundle/tweaksupport/data/.installed_debs", O_CREAT));
         }
         
-        
+        // MARK: INJECT TWEAK
         if (self.tweaks.isOn) {
             
             LOG("[*] Time for magic");
@@ -516,6 +520,7 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
                 }
             }
             
+            // MARK: INSTALL iSuper SU
             if (self.isupersu.isOn) {
                 
                 LOG("[*] Installing iSuperSU");
@@ -533,10 +538,11 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
                 fixMmap("/var/LIB/Frameworks/CydiaSubstrate.framework/CydiaSubstrate");
                 fixMmap("/var/LIB/MobileSubstrate/DynamicLibraries/AppSyncUnified.dylib");
                 
-                failIf(launch("/var/containers/Bundle/tweaksupport/usr/bin/uicache", NULL, NULL, NULL, NULL, NULL, NULL, NULL), "[-] Failed to install iSuperSU");
+//                failIf(launch("/var/containers/Bundle/tweaksupport/usr/bin/uicache", NULL, NULL, NULL, NULL, NULL, NULL, NULL), "[-] Failed to install iSuperSU");
                 
             }
             
+            // MARK: Install Saily.Daemon
             if (self.saily.isOn) {
 //            if (false) {
                     
@@ -586,6 +592,8 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
                 
             }
         escapeSaily:
+            
+            // MARK: Install Filza
             if (self.filza.isOn){
                 
                 LOG("[*] Installing Filza File Manager");
