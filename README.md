@@ -23,7 +23,7 @@
 - A12 support for iOS 12?
 
 ## Future.
-- I plan to maintain rootlessJB4 for as long as jailbreaking is alive. I could not have made a more stable (and stable) Jailbreak without Lakr, John, and Chr0nic! It saddens me that at this point in time rootlessJB4 is The ONLY currently open sourced project.(besides unc0ver which is now closed source for any new update.) I plan to let people learn and continue making jailbreaks. Therefore this will always be maintained and OPEN SOURCED!
+- I plan to maintain rootlessJB4 for as long as jailbreaking is alive. I could not have made a more stable (and safe) Jailbreak without Lakr, John, and Chr0nic! It saddens me that at this point in time rootlessJB4 is The ONLY currently open sourced project.(besides unc0ver which is now closed source for any new update.) I plan to let people learn and continue making jailbreaks. Therefore this will always be maintained and OPEN SOURCED!
 
 Thanks to: 
 
