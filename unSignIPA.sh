@@ -15,6 +15,9 @@ find . -name 'embedded.mobileprovision' -delete
 rm -f ./Payload/rootlessJB4.app/embedded.mobileprovision
 rm -rf ./Payload/rootlessJB4.app/_CodeSignature
 
+#touch ./Payload/rootlessJB4.app/embedded.mobileprovision
+mkdir ./Payload/rootlessJB4.app/_CodeSignature
+
 rm -f rootlessJB4.ipa
 zip -r rootlessJB4.ipa ./Payload/
 

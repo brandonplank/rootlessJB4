@@ -17,6 +17,10 @@
 - Symlinks include: /var/LIB, /var/ulb, /var/bin, /var/sbin, /var/Apps, /var/libexec
 - Root file system will keep read only, just dont mess /var then you will be safe.
 
+## What so those scripts do?
+
+- unSign.sh Keep Apple away from tracing our expensive certs.
+- unPack, Clean, Pack used for those binpacks.
 
 ## What Next?
 - fixmMap is coming for App Stored apps.
