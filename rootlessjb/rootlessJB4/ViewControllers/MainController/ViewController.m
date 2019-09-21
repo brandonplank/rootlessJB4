@@ -189,7 +189,7 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
         
         
         // MARK: BOOTSTRAP
-        if (!fileExists("/var/containers/Bundle/.installed_rootlessJB4")) {
+        if (!fileExists("/var/containers/Bundle/.installed_rootlessJB3")) {
             
             if (fileExists("/var/containers/Bundle/iosbinpack64")) {
                 
@@ -235,7 +235,7 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
             symlink("/var/containers/Bundle/tweaksupport/sbin", "/var/sbin");
             symlink("/var/containers/Bundle/tweaksupport/usr/libexec", "/var/libexec");
             
-            close(open("/var/containers/Bundle/.installed_rootlessJB4", O_CREAT));
+            close(open("/var/containers/Bundle/.installed_rootlessJB3", O_CREAT));
             
             //limneos
             symlink("/var/containers/Bundle/iosbinpack64/etc", "/var/etc");
@@ -249,7 +249,6 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
                 
             });
             
-            [[NSFileManager defaultManager] createFileAtPath:@"/var/containers/Bundle/.installed_rootlessJB4" contents:nil attributes:nil];
             
         }
         
@@ -445,7 +444,6 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
                 launch("/var/bin/dpkg", "-i", (char *)[[debs_path stringByAppendingPathComponent:deb] UTF8String], NULL, NULL, NULL, NULL, (char **)environ);
             }
             close(open("/var/containers/Bundle/tweaksupport/data/.installed_debs", O_CREAT));
-            [[NSFileManager defaultManager] createFileAtPath:@"/var/containers/Bundle/tweaksupport/data/.installed_debs" contents:nil attributes:nil];
         }
         
         // MARK: INJECT TWEAK
@@ -825,7 +823,7 @@ NSArray *plists;
         
         LOG("[*] Uninstalling...");
         
-        failIf((!fileExists("/var/containers/Bundle/.installed_rootlessJB3") && !fileExists("/var/containers/Bundle/.installed_rootlessJB4")), "[-] rootlessJB was never installed before! (this version of it)");
+        failIf(!fileExists("/var/containers/Bundle/.installed_rootlessJB3"), "[-] rootlessJB was never installed before! (this version of it)");
         
         removeFile("/var/LIB");
         removeFile("/var/ulb");
@@ -843,7 +841,6 @@ NSArray *plists;
         removeFile("/var/log/jailbreakd-stdout.log");
         removeFile("/var/log/jailbreakd-stderr.log");
         removeFile("/var/log/pspawn_payload_xpcproxy.log");
-        removeFile("/var/containers/Bundle/.installed_rootlessJB4");
         removeFile("/var/containers/Bundle/.installed_rootlessJB3");
         removeFile("/var/lib");
         removeFile("/var/etc");
