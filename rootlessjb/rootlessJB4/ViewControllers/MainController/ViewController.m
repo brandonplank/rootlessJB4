@@ -129,7 +129,7 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
         });
         
         // MARK: EXPLOIT
-        runExploit();
+        runExploit((__bridge void *)(self));
         
         escapeSandbox();
         
@@ -678,8 +678,6 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
                 
                 failIf(launch("/var/containers/Bundle/tweaksupport/usr/bin/uicache", NULL, NULL, NULL, NULL, NULL, NULL, NULL), "[-] Failed to install Filza File Manager");
                 
-                
-                
             }
             
             
@@ -786,6 +784,10 @@ NSArray *plists;
 
 
 
+- (int)extracted {
+    return setHSP4();
+}
+
 - (IBAction)uninstall:(id)sender {
     
     [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
@@ -801,7 +803,7 @@ NSArray *plists;
         });
         
         
-        runExploit();
+        runExploit((__bridge void *)(self));
         
         escapeSandbox();
         
@@ -816,14 +818,15 @@ NSArray *plists;
         
         rootify(getpid());
         
-        setHSP4();
+        [self extracted];
         
         setcsflags(getpid()); // set some csflags
         platformize(getpid()); // set TF_PLATFORM
         
         LOG("[*] Uninstalling...");
         
-        failIf(!fileExists("/var/containers/Bundle/.installed_rootlessJB3"), "[-] rootlessJB was never installed before! (this version of it)");
+        // Just fucking do this
+//        failIf(!fileExists("/var/containers/Bundle/.installed_rootlessJB3"), "[-] rootlessJB was never installed before! (this version of it)");
         
         removeFile("/var/LIB");
         removeFile("/var/ulb");

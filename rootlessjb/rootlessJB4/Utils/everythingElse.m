@@ -7,6 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+
+#import <UIKit/UIKit.h>
+
 #include "everythingElse.h"
 #include "sockport.h"
 #include "offsets.h"
@@ -106,9 +109,40 @@ bool runExploitSockPuppet3() {
     return true;
 }
 
-bool runExploit()
+bool runExploit(void *init)
 {
-    switch (selectedExploit) {
+    
+    dispatch_semaphore_t sem = dispatch_semaphore_create(0);
+    
+    __block RootlessExploit selectedExploitByAlert = RootlessExploitSockPuppet3;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[UIApplication sharedApplication] endIgnoringInteractionEvents];
+
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"WARNING"
+                                       message:@"Select Exploit?"
+                                       preferredStyle:UIAlertControllerStyleAlert];
+
+                                       UIAlertAction *socketPuppet = [UIAlertAction actionWithTitle:@"SocketPuppet" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                           [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+                                           dispatch_semaphore_signal(sem);
+                                       }];
+
+                                       UIAlertAction *sockPort = [UIAlertAction actionWithTitle:@"ScokPort" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                           [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+                                           selectedExploitByAlert = RootlessExploitSockPort3;
+                                           dispatch_semaphore_signal(sem);
+                                       }];
+        
+        [alert addAction:socketPuppet];
+        [alert addAction:sockPort];
+        
+        [(__bridge UIViewController *)init presentViewController:alert animated:true completion:nil];
+    });
+    
+    dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
+    
+    switch (selectedExploitByAlert) {
         case RootlessExploitSockPuppet3:
             return runExploitSockPuppet3();
         case RootlessExploitSockPort3:

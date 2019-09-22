@@ -23,7 +23,7 @@ extern uint64_t selfproc_cached;
 // SockPuppet3
 extern uint64_t task_addr_cache;
 
-bool runExploit(void);
+bool runExploit(void *init);
 bool escapeSandbox(void);
 
 #endif /* everythingElse_h */

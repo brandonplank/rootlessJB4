@@ -633,7 +633,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CQ2J5N72GP;
+				DEVELOPMENT_TEAM = 8LGRDQBWN3;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/rootlessJB4/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -652,7 +652,7 @@
 					"-w",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Lakr233.rootlessJB4;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-Lakr233.rootlessJB4";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -663,7 +663,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CQ2J5N72GP;
+				DEVELOPMENT_TEAM = 8LGRDQBWN3;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/rootlessJB4/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -682,7 +682,7 @@
 					"-w",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Lakr233.rootlessJB4;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-Lakr233.rootlessJB4";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
