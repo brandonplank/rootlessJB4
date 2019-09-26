@@ -24,6 +24,9 @@
 
 ## What's next?
 - fixmMap is coming for App Store apps.
+- Adding support for remounting the user filesystem, but nothing will be wrote to /. So unless you put Cydia.app in /Applications you should be fine. You can also disable it.
+- Full Substituite
+- New Tweak Inject(Current one causes the device to kernel panic when installing a tweak from Saily)
 - A12 support for iOS 12?
 
 ## Future.
