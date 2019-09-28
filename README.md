@@ -5,6 +5,9 @@
 - All A7-A11 devices
 - iOS 12.0 - 12.2 & 12.4
 
+# One Week Uptime Check Point
+![AIDA64](https://github.com//BrandonPlank/rootlessJB4/blob/master/IMG_545942B67DA6-1.JPEG?raw=true)
+
 ## Saily Package Manager
 - Saily.Daemon is bundled with rootlessJB4
 - The SailySandBoxed.ipa should be installed as well as rootlessJB4.ipa
