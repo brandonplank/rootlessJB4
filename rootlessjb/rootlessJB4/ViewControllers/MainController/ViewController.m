@@ -53,7 +53,7 @@ printf(string "\n", ##args); \
 @property (weak, nonatomic) IBOutlet UIButton *unjbtext;
 @property (weak, nonatomic) IBOutlet UISwitch *tweaks;
 @property (weak, nonatomic) IBOutlet UISwitch *filza;
-@property (weak, nonatomic) IBOutlet UISwitch *isupersu;
+@property (weak, nonatomic) IBOutlet UISwitch *ReProvision;
 @property (weak, nonatomic) IBOutlet UISwitch *saily;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *exploitControl;
 
@@ -65,6 +65,11 @@ printf(string "\n", ##args); \
 struct utsname u;
 vm_size_t psize;
 int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
+
+
+
+BOOL debug = true;
+
 
 
 - (void)viewDidLoad {
@@ -520,8 +525,44 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
                 }
             }
             
-            // MARK: INSTALL iSuper SU
-            if (self.isupersu.isOn) {
+            // MARK: INSTALL Reprovision
+            if (self.ReProvision.isOn) {
+                
+                LOG("[*] Installing ReProvision");
+                
+                removeFile("/var/containers/Bundle/tweaksupport/Applications/ReProvision.app");
+                copyFile(in_bundle("apps/ReProvision.app"), "/var/containers/Bundle/tweaksupport/Applications/ReProvision.app");
+                
+                failIf(system_("/var/containers/Bundle/tweaksupport/usr/local/bin/jtool --sign --inplace --ent /var/containers/Bundle/tweaksupport/Applications/ReProvision.app/ent.xml /var/containers/Bundle/tweaksupport/Applications/ReProvision.app/ReProvision && /var/containers/Bundle/tweaksupport/usr/bin/inject /var/containers/Bundle/tweaksupport/Applications/ReProvision.app/ReProvision"), "[-] Failed to sign ReProvision");
+                
+                removeFile("/var/LIB/MobileSubstrate/DynamicLibraries/ReProvision");
+                copyFile("/var/containers/Bundle/tweaksupport/Applications/ReProvision.app/ReProvision", "/var/LIB/MobileSubstrate/DynamicLibraries/ReProvision");
+                
+                // just in case
+                fixMmap("/var/ulb/libsubstitute.dylib");
+                fixMmap("/var/LIB/Frameworks/CydiaSubstrate.framework/CydiaSubstrate");
+                fixMmap("/var/LIB/MobileSubstrate/DynamicLibraries/AppSyncUnified.dylib");
+                
+                
+                removeFile("/var/containers/Bundle/tweaksupport/Library/LaunchDaemons/com.matchstic.reprovisiond.plist");
+                removeFile("/var/containers/Bundle/tweaksupport/usr/bin/reprovisiond");
+                
+                copyFile(in_bundle("apps/com.matchstic.reprovisiond.plist"), "/var/containers/Bundle/tweaksupport/Library/LaunchDaemons/com.matchstic.reprovisiond.plist");
+                copyFile(in_bundle("apps/reprovisiond"), "/var/containers/Bundle/tweaksupport/usr/bin/reprovisiond");
+                chmod("/var/containers/Bundle/tweaksupport/usr/bin/reprovisiond", 0777);
+                
+                //resign
+                failIf(trustbin("/var/containers/Bundle/iosbinpack64/usr/bin/reprovisiond"), "[-] Failed to trust binaries!");
+                
+                
+                //                failIf(launch("/var/containers/Bundle/tweaksupport/usr/bin/uicache", NULL, NULL, NULL, NULL, NULL, NULL, NULL), "[-] Failed to install iSuperSU");
+                
+            }
+            
+            if(debug == true){
+                
+                
+                LOG("[*] Debug mode is on!");
                 
                 LOG("[*] Installing iSuperSU");
                 
@@ -538,9 +579,14 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
                 fixMmap("/var/LIB/Frameworks/CydiaSubstrate.framework/CydiaSubstrate");
                 fixMmap("/var/LIB/MobileSubstrate/DynamicLibraries/AppSyncUnified.dylib");
                 
-//                failIf(launch("/var/containers/Bundle/tweaksupport/usr/bin/uicache", NULL, NULL, NULL, NULL, NULL, NULL, NULL), "[-] Failed to install iSuperSU");
+                
+            }else{
+                LOG("[*] Debug mode is off!");
+                goto continue1;
+                
                 
             }
+        continue1:
             
             // MARK: Install Saily.Daemon
             if (self.saily.isOn) {
