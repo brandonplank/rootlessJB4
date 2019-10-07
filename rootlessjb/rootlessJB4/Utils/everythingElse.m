@@ -172,7 +172,7 @@ bool runExploit(void *init)
                                        }];
         
         [alert addAction:socketPuppet];
-        [alert addAction:sockPort];
+        //[alert addAction:sockPort];  //The kernel base finder is broken :( i have to fix later
         
         [(__bridge UIViewController *)init presentViewController:alert animated:true completion:nil];
     });
