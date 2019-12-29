@@ -41,6 +41,7 @@
 
 Thanks to: 
 
+* Jake James
 * Ian Beer
 * Brandon Azad
 * Brandon Plank
