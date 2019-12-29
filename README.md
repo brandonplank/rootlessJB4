@@ -1,5 +1,7 @@
 # rootlessJB12.4
 
+[App](https://github.com//BrandonPlank/rootlessJB4/blob/master/IMG_0486.png?raw=true)
+
 ## Support
 
 - All A7-A11 devices
@@ -37,14 +39,14 @@
 
 Thanks to: 
 
-Ian Beer
-Brandon Azad
-Brandon Plank
-Jonathan Levin
-IBSparkes
-Sam Bingner
-Sammy Guichelaar
-Ned Williamson
-Umang Raghuvanshi
-@Chr0nicT
-Lakr Aream
+* Ian Beer
+* Brandon Azad
+* Brandon Plank
+* Jonathan Levin
+* IBSparkes
+* Sam Bingner
+* Sammy Guichelaar
+* Ned Williamson
+* Umang Raghuvanshi
+* Tanay Findley
+* Lakr Aream

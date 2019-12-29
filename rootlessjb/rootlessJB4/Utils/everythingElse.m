@@ -101,6 +101,37 @@ uint64_t find_kbase()
     return 0;
 }
 
+uint64_t find_kbase_sock_port()
+{
+    uint64_t task_addr;
+    
+    if (task_self_addr_cache != 0) {
+        uint64_t task_port_addr = task_self_addr_cache;
+        task_addr = rk64(task_port_addr + koffset(KSTRUCT_OFFSET_IPC_PORT_IP_KOBJECT));
+    } else {
+        task_addr = task_addr_cache;
+    }
+    
+    kern_return_t kr = 0;
+    uint64_t *kernel_task_base = NULL;
+    uint64_t *kernel_task_slide = NULL;
+    struct task_dyld_info *task_dyld_info = NULL;
+    mach_msg_type_number_t *task_dyld_info_count = NULL;
+    kernel_task_base = malloc(sizeof(uint64_t));
+    bzero(kernel_task_base, sizeof(uint64_t));
+    kernel_task_slide = malloc(sizeof(uint64_t));
+    bzero(kernel_task_slide, sizeof(uint64_t));
+    task_dyld_info = malloc(sizeof(struct task_dyld_info));
+    bzero(task_dyld_info, sizeof(struct task_dyld_info));
+    task_dyld_info_count = malloc(sizeof(mach_msg_type_number_t));
+    bzero(task_dyld_info_count, sizeof(mach_msg_type_number_t));
+    *task_dyld_info_count = TASK_DYLD_INFO_COUNT;
+    kr = task_info(tfp0, TASK_DYLD_INFO, (task_info_t)task_dyld_info, task_dyld_info_count);
+    *kernel_task_slide = task_dyld_info->all_image_info_size;
+    *kernel_task_base = *kernel_task_slide + 0xfffffff007004000;
+    return kernel_base;
+}
+
 bool runExploitSockPort3() {
     mach_port_t tmp;
     kern_return_t kRet = host_get_special_port(mach_host_self(), 0, 4, &tmp);
@@ -116,7 +147,7 @@ bool runExploitSockPort3() {
 
     
     task_self_addr_cache =task_self_addr_cache; // debug
-    kernel_base = find_kbase();
+    kernel_base = find_kbase_sock_port();
     kernel_slide = (kernel_base - 0xFFFFFFF007004000);
 
 success:
@@ -172,7 +203,7 @@ bool runExploit(void *init)
                                        }];
         
         [alert addAction:socketPuppet];
-        //[alert addAction:sockPort];  //The kernel base finder is broken :( i have to fix later
+        [alert addAction:sockPort];  //The kernel base finder is still broken, but im open to pr's
         
         [(__bridge UIViewController *)init presentViewController:alert animated:true completion:nil];
     });
