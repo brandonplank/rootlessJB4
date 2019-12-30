@@ -856,7 +856,7 @@ NSArray *plists;
         
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_jbtext setTitle:@"-> 2/12" forState:UIControlStateNormal];
+            [self->_unjbtext setTitle:@"-> 2/12" forState:UIControlStateNormal];
             
         });
         
@@ -865,7 +865,7 @@ NSArray *plists;
         
         
         
-        unsandbox(getpid());
+        //unsandbox(getpid());
         printf("Unsandboxed");
         
         rootify(getpid());
@@ -873,7 +873,7 @@ NSArray *plists;
         
         setHSP4();
         
-        [self extracted];
+        //[self extracted];
         
         setcsflags(getpid()); // set some csflags
         platformize(getpid()); // set TF_PLATFORM
@@ -883,27 +883,95 @@ NSArray *plists;
         // Just fucking do this
         //failIf(!fileExists("/var/containers/Bundle/.installed_rootlessJB4"), "[-] rootlessJB was never installed before! (this version of it)");
         
+        
+        
+       
         removeFile("/var/LIB");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self->_unjbtext setTitle:@"-> Cleaning /var/LIB" forState:UIControlStateNormal];
+            
+        });
         removeFile("/var/ulb");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self->_unjbtext setTitle:@"-> Cleaning /var/ulb" forState:UIControlStateNormal];
+            
+        });
         removeFile("/var/bin");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self->_unjbtext setTitle:@"-> Cleaning /var/bin" forState:UIControlStateNormal];
+            
+        });
         removeFile("/var/sbin");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self->_unjbtext setTitle:@"-> Cleaning /var/sbin" forState:UIControlStateNormal];
+            
+        });
         removeFile("/var/libexec");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self->_unjbtext setTitle:@"-> Cleaning /var/libexec" forState:UIControlStateNormal];
+            
+        });
         removeFile("/var/containers/Bundle/tweaksupport/Applications");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self->_unjbtext setTitle:@"-> Cleaning Applications" forState:UIControlStateNormal];
+            
+        });
         removeFile("/var/Apps");
         removeFile("/var/profile");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self->_unjbtext setTitle:@"-> Cleaning /var/profile" forState:UIControlStateNormal];
+            
+        });
         removeFile("/var/motd");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self->_unjbtext setTitle:@"-> Cleaning /var/motd" forState:UIControlStateNormal];
+            
+        });
         removeFile("/var/dropbear");
-        //removeFile("/var/containers/Bundle/tweaksupport");
-        //removeFile("/var/containers/Bundle/iosbinpack64");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self->_unjbtext setTitle:@"-> Cleaning /var/dropbear" forState:UIControlStateNormal];
+            
+        });
         removeFile("/var/log/testbin.log");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self->_unjbtext setTitle:@"-> Cleaning /var/log/testbin.log" forState:UIControlStateNormal];
+            
+        });
         removeFile("/var/log/jailbreakd-stdout.log");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self->_unjbtext setTitle:@"-> Cleaning /var/log/jailbreakd-stdout.log" forState:UIControlStateNormal];
+            
+        });
         removeFile("/var/log/jailbreakd-stderr.log");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self->_unjbtext setTitle:@"-> Cleaning /var/log/jailbreakd-stderr.log" forState:UIControlStateNormal];
+            
+        });
         removeFile("/var/log/pspawn_payload_xpcproxy.log");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self->_unjbtext setTitle:@"-> Cleaning /var/log/pspawn_payload_xpcproxy.log" forState:UIControlStateNormal];
+            
+        });
         removeFile("/var/containers/Bundle/.installed_rootlessJB3");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self->_unjbtext setTitle:@"-> Cleaning /var/containers/Bundle/.installed_rootlessJB3" forState:UIControlStateNormal];
+            
+        });
         removeFile("/var/lib");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self->_unjbtext setTitle:@"-> Cleaning /var/lib" forState:UIControlStateNormal];
+            
+        });
         removeFile("/var/etc");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self->_unjbtext setTitle:@"-> Cleaning /var/etc" forState:UIControlStateNormal];
+            
+        });
         removeFile("/var/usr");
-        removeFile("/var/containers/Bundle/.installed_rootlessJB3")
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self->_unjbtext setTitle:@"-> Cleaning /var/usr" forState:UIControlStateNormal];
+            
+        });
         
         
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -943,16 +1011,13 @@ NSArray *plists;
             
         });
         
-        sleep(5);
-        exit(0);
-        
     });
     
 }
 
 
 - (IBAction)credits:(id)sender {
-    NSString *message = [NSString stringWithFormat:@"rootlessJB by Jake James\n\nMaintained by Brandon Plank(@BrandonD3V)\n\nSockPuppet exploit by Ned Williamson\n\nSockPort exploit by Jake James\n\nSockPuppet3 exploit by Umang Raghuvanshi\n\nKernel Base and kernel slide finder by @Chr0nicT\n\nSaily Package Manager by @Lakr233\n\nVersion RC.1.2"];
+    NSString *message = [NSString stringWithFormat:@"rootlessJB by Jake James\n\nMaintained by Brandon Plank(@BrandonD3V)\n\nSockPuppet exploit by Ned Williamson\n\nSockPort exploit by Jake James\n\nSockPuppet3 exploit by Umang Raghuvanshi\n\nKernel Base and kernel slide finder by @Chr0nicT\n\nSaily Package Manager by @Lakr233\n\nVersion RC.1.3"];
     
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Credits" message:message preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *Done = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action){

@@ -190,7 +190,7 @@ bool runExploit(void *init)
                                            dispatch_semaphore_signal(sem);
                                        }];
 
-                                       UIAlertAction *sockPort = [UIAlertAction actionWithTitle:@"ScokPort" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                       UIAlertAction *sockPort = [UIAlertAction actionWithTitle:@"SockPort" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                                            [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
                                            selectedExploitByAlert = RootlessExploitSockPort3;
                                            dispatch_semaphore_signal(sem);
