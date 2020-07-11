@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>10</integer>
+	<key>logs</key>
+	<dict>
+		<key>A1DD502D-D7CC-4D48-B44F-DD02E496370B</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogMajorGroupSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.application</string>
+			<key>fileName</key>
+			<string>A1DD502D-D7CC-4D48-B44F-DD02E496370B.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>signature</key>
+			<string>rootlessJB4-geyotspsgkxiwygqtvhkhsudeokw</string>
+			<key>timeStartedRecording</key>
+			<real>616201865.45305896</real>
+			<key>timeStoppedRecording</key>
+			<real>616201868.31864095</real>
+			<key>title</key>
+			<string>Build target rootlessJB4</string>
+			<key>uniqueIdentifier</key>
+			<string>A1DD502D-D7CC-4D48-B44F-DD02E496370B</string>
+		</dict>
+	</dict>
+	<key>preserveOldLogs</key>
+	<true/>
+</dict>
+</plist>

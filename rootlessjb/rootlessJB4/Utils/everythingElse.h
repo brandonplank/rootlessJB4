@@ -15,8 +15,7 @@
 extern uint64_t task_self_addr_cache;
 extern uint64_t selfproc_cached;
 extern mach_port_t tfp0;
-extern uint64_t kernel_slide;
-extern uint64_t kernel_base;
+extern uint64_t kbase;
 extern uint64_t task_self_addr_cache;
 extern uint64_t selfproc_cached;
 

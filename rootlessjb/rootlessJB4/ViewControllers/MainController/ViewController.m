@@ -134,9 +134,21 @@ BOOL debug = true;
         });
         
         // MARK: EXPLOIT
-        runExploit((__bridge void *)(self));
+        if (runExploit((__bridge void *)(self)) == false){
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self->_jbtext setTitle:@"Exploit Failed" forState:UIControlStateNormal];
+                
+            });
+            return;
+        }
         
-        escapeSandbox();
+        if (escapeSandbox() == false){
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self->_jbtext setTitle:@"Error: Sandbox" forState:UIControlStateNormal];
+                
+            });
+            return;
+        }
         
         
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -145,7 +157,7 @@ BOOL debug = true;
         });
         
         
-        init_with_kbase(tfp0, kernel_base);
+        init_with_kbase(tfp0, kbase);
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self->_jbtext setTitle:@"-> 3/12" forState:UIControlStateNormal];
@@ -849,10 +861,22 @@ NSArray *plists;
         });
         
         
-                // MARK: EXPLOIT
-        runExploit((__bridge void *)(self));
+        // MARK: EXPLOIT
+        if (runExploit((__bridge void *)(self)) == false){
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self->_jbtext setTitle:@"Exploit Failed" forState:UIControlStateNormal];
+                
+            });
+            return;
+        }
         
-        escapeSandbox();
+        if (escapeSandbox() == false){
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self->_jbtext setTitle:@"Error: Sandbox" forState:UIControlStateNormal];
+                
+            });
+            return;
+        }
         
         
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -861,7 +885,7 @@ NSArray *plists;
         });
         
         
-        init_with_kbase(tfp0, kernel_base);
+        init_with_kbase(tfp0, kbase);
         
         
         
@@ -1017,7 +1041,7 @@ NSArray *plists;
 
 
 - (IBAction)credits:(id)sender {
-    NSString *message = [NSString stringWithFormat:@"rootlessJB by Jake James\n\nMaintained by @0x36b\n\nSockPuppet exploit by Ned Williamson\n\nSockPort exploit by Jake James\n\nSockPuppet3 exploit by Umang Raghuvanshi\n\nKernel Base and kernel slide finder by @Chr0nicT\n\nSaily Package Manager by @Lakr233\n\nVersion RC.1.4"];
+    NSString *message = [NSString stringWithFormat:@"Original rootlessJB by Jake James\n\nRootlessJB4 by @_bplank\n\ntime_waste exploit by Jake James\n\nSaily Package Manager by @Lakr233\n\nVersion RC.2.0"];
     
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Credits" message:message preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *Done = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action){

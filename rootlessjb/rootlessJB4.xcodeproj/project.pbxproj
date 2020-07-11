@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		5019957A23354FFE00185F42 /* Comfortaa-VariableFont:wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5019957923354FFE00185F42 /* Comfortaa-VariableFont:wght.ttf */; };
+		88070BFB24BA5EED00DF8B8C /* exploit_utilities.c in Sources */ = {isa = PBXBuildFile; fileRef = 88070BF024BA5EED00DF8B8C /* exploit_utilities.c */; };
+		88070BFC24BA5EED00DF8B8C /* exploit.c in Sources */ = {isa = PBXBuildFile; fileRef = 88070BF324BA5EED00DF8B8C /* exploit.c */; };
+		88070BFD24BA5EED00DF8B8C /* IOAccelerator_stuff.c in Sources */ = {isa = PBXBuildFile; fileRef = 88070BF424BA5EED00DF8B8C /* IOAccelerator_stuff.c */; };
+		88070BFE24BA5EED00DF8B8C /* kernel_memory.c in Sources */ = {isa = PBXBuildFile; fileRef = 88070BF524BA5EED00DF8B8C /* kernel_memory.c */; };
+		88070BFF24BA5EED00DF8B8C /* IOSurface_stuff.c in Sources */ = {isa = PBXBuildFile; fileRef = 88070BF724BA5EED00DF8B8C /* IOSurface_stuff.c */; };
+		88070C0324BA618000DF8B8C /* offsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 88070C0124BA618000DF8B8C /* offsets.m */; };
 		880D0CA123285E62003CB5CB /* IOKit.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D0C9E23285E62003CB5CB /* IOKit.tbd */; };
 		880D0CA223285E62003CB5CB /* jelbrekLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D0C9F23285E62003CB5CB /* jelbrekLib.a */; };
 		880D0CA323285E62003CB5CB /* libjb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D0CA023285E62003CB5CB /* libjb.a */; };
@@ -23,16 +29,7 @@
 		8820D1AA23171E2500697A34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8820D1A923171E2500697A34 /* Assets.xcassets */; };
 		8820D1AD23171E2500697A34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8820D1AB23171E2500697A34 /* LaunchScreen.storyboard */; };
 		8820D1B023171E2500697A34 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8820D1AF23171E2500697A34 /* main.m */; };
-		8820D1D623171E7100697A34 /* sockport.c in Sources */ = {isa = PBXBuildFile; fileRef = 8820D1D423171E7100697A34 /* sockport.c */; };
-		8820D1D923171EC100697A34 /* exploit_utilities.c in Sources */ = {isa = PBXBuildFile; fileRef = 8820D1D723171EC100697A34 /* exploit_utilities.c */; };
-		8820D1DC23171F0100697A34 /* iosurface.c in Sources */ = {isa = PBXBuildFile; fileRef = 8820D1DA23171F0100697A34 /* iosurface.c */; };
-		8820D1E5231720E100697A34 /* kernel_memory.c in Sources */ = {isa = PBXBuildFile; fileRef = 8820D1E3231720E100697A34 /* kernel_memory.c */; };
-		8820D1E82317216E00697A34 /* offsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 8820D1E62317216E00697A34 /* offsets.m */; };
 		8820D1EB231729C300697A34 /* everythingElse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8820D1E9231729C300697A34 /* everythingElse.m */; };
-		FADCDF922333C5FB00C0777D /* SockPuppet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FADCDF902333C5FB00C0777D /* SockPuppet.cpp */; };
-		FADCDF962333C68600C0777D /* Utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FADCDF942333C68500C0777D /* Utility.cpp */; };
-		FADCDF992333C75700C0777D /* SockPuppet3.mm in Sources */ = {isa = PBXBuildFile; fileRef = FADCDF982333C75700C0777D /* SockPuppet3.mm */; };
-		FADCDF9C2333C7FA00C0777D /* exploit.c in Sources */ = {isa = PBXBuildFile; fileRef = FADCDF9B2333C7FA00C0777D /* exploit.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +51,18 @@
 
 /* Begin PBXFileReference section */
 		5019957923354FFE00185F42 /* Comfortaa-VariableFont:wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-VariableFont:wght.ttf"; sourceTree = "<group>"; };
+		88070BEF24BA5EED00DF8B8C /* exploit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exploit.h; sourceTree = "<group>"; };
+		88070BF024BA5EED00DF8B8C /* exploit_utilities.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = exploit_utilities.c; sourceTree = "<group>"; };
+		88070BF124BA5EED00DF8B8C /* IOSurface_stuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOSurface_stuff.h; sourceTree = "<group>"; };
+		88070BF224BA5EED00DF8B8C /* exploit_utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exploit_utilities.h; sourceTree = "<group>"; };
+		88070BF324BA5EED00DF8B8C /* exploit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = exploit.c; sourceTree = "<group>"; };
+		88070BF424BA5EED00DF8B8C /* IOAccelerator_stuff.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IOAccelerator_stuff.c; sourceTree = "<group>"; };
+		88070BF524BA5EED00DF8B8C /* kernel_memory.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kernel_memory.c; sourceTree = "<group>"; };
+		88070BF624BA5EED00DF8B8C /* IOAccelerator_stuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOAccelerator_stuff.h; sourceTree = "<group>"; };
+		88070BF724BA5EED00DF8B8C /* IOSurface_stuff.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IOSurface_stuff.c; sourceTree = "<group>"; };
+		88070BF924BA5EED00DF8B8C /* kernel_memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kernel_memory.h; sourceTree = "<group>"; };
+		88070C0124BA618000DF8B8C /* offsets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = offsets.m; sourceTree = "<group>"; };
+		88070C0224BA618000DF8B8C /* offsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = offsets.h; sourceTree = "<group>"; };
 		880D0C9E23285E62003CB5CB /* IOKit.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = IOKit.tbd; sourceTree = "<group>"; };
 		880D0C9F23285E62003CB5CB /* jelbrekLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = jelbrekLib.a; sourceTree = "<group>"; };
 		880D0CA023285E62003CB5CB /* libjb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjb.a; sourceTree = "<group>"; };
@@ -80,16 +89,6 @@
 		8820D1AF23171E2500697A34 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8820D1B523171E2500697A34 /* rootlessJB4Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rootlessJB4Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8820D1C023171E2500697A34 /* rootlessJB4UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rootlessJB4UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8820D1D423171E7100697A34 /* sockport.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = sockport.c; sourceTree = "<group>"; };
-		8820D1D523171E7100697A34 /* sockport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sockport.h; sourceTree = "<group>"; };
-		8820D1D723171EC100697A34 /* exploit_utilities.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = exploit_utilities.c; sourceTree = "<group>"; };
-		8820D1D823171EC100697A34 /* exploit_utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = exploit_utilities.h; sourceTree = "<group>"; };
-		8820D1DA23171F0100697A34 /* iosurface.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = iosurface.c; sourceTree = "<group>"; };
-		8820D1DB23171F0100697A34 /* iosurface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iosurface.h; sourceTree = "<group>"; };
-		8820D1E3231720E100697A34 /* kernel_memory.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = kernel_memory.c; sourceTree = "<group>"; };
-		8820D1E4231720E100697A34 /* kernel_memory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kernel_memory.h; sourceTree = "<group>"; };
-		8820D1E62317216E00697A34 /* offsets.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = offsets.m; sourceTree = "<group>"; };
-		8820D1E72317216E00697A34 /* offsets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = offsets.h; sourceTree = "<group>"; };
 		8820D1E9231729C300697A34 /* everythingElse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = everythingElse.m; sourceTree = "<group>"; };
 		8820D1EA231729C300697A34 /* everythingElse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = everythingElse.h; sourceTree = "<group>"; };
 		8820D1F12317323000697A34 /* IOKitKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOKitKeys.h; sourceTree = "<group>"; };
@@ -98,15 +97,6 @@
 		8820D1F42317323000697A34 /* IOTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOTypes.h; sourceTree = "<group>"; };
 		8820D1F52317323000697A34 /* OSMessageNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSMessageNotification.h; sourceTree = "<group>"; };
 		885BB1DB23174B2B0048F2B3 /* jelbrekLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jelbrekLib.h; sourceTree = "<group>"; };
-		FADCDF902333C5FB00C0777D /* SockPuppet.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SockPuppet.cpp; sourceTree = "<group>"; };
-		FADCDF912333C5FB00C0777D /* SockPuppet.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SockPuppet.hpp; sourceTree = "<group>"; };
-		FADCDF932333C65800C0777D /* SockPuppetStructures.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SockPuppetStructures.h; sourceTree = "<group>"; };
-		FADCDF942333C68500C0777D /* Utility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utility.cpp; sourceTree = "<group>"; };
-		FADCDF952333C68500C0777D /* Utility.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Utility.hpp; sourceTree = "<group>"; };
-		FADCDF972333C75700C0777D /* SockPuppet3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SockPuppet3.h; sourceTree = "<group>"; };
-		FADCDF982333C75700C0777D /* SockPuppet3.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SockPuppet3.mm; sourceTree = "<group>"; };
-		FADCDF9A2333C7FA00C0777D /* exploit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = exploit.h; sourceTree = "<group>"; };
-		FADCDF9B2333C7FA00C0777D /* exploit.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = exploit.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +127,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		88070BEE24BA5ECB00DF8B8C /* time_waste */ = {
+			isa = PBXGroup;
+			children = (
+				88070C0224BA618000DF8B8C /* offsets.h */,
+				88070C0124BA618000DF8B8C /* offsets.m */,
+				88070BF024BA5EED00DF8B8C /* exploit_utilities.c */,
+				88070BF224BA5EED00DF8B8C /* exploit_utilities.h */,
+				88070BF324BA5EED00DF8B8C /* exploit.c */,
+				88070BEF24BA5EED00DF8B8C /* exploit.h */,
+				88070BF424BA5EED00DF8B8C /* IOAccelerator_stuff.c */,
+				88070BF624BA5EED00DF8B8C /* IOAccelerator_stuff.h */,
+				88070BF724BA5EED00DF8B8C /* IOSurface_stuff.c */,
+				88070BF124BA5EED00DF8B8C /* IOSurface_stuff.h */,
+				88070BF524BA5EED00DF8B8C /* kernel_memory.c */,
+				88070BF924BA5EED00DF8B8C /* kernel_memory.h */,
+			);
+			path = time_waste;
+			sourceTree = "<group>";
+		};
 		880D0C9D23285E62003CB5CB /* libs */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,19 +154,6 @@
 				880D0CA023285E62003CB5CB /* libjb.a */,
 			);
 			path = libs;
-			sourceTree = "<group>";
-		};
-		880D0CA42328607E003CB5CB /* SockPort3 */ = {
-			isa = PBXGroup;
-			children = (
-				8820D1D423171E7100697A34 /* sockport.c */,
-				8820D1D523171E7100697A34 /* sockport.h */,
-				8820D1D723171EC100697A34 /* exploit_utilities.c */,
-				8820D1D823171EC100697A34 /* exploit_utilities.h */,
-				8820D1DA23171F0100697A34 /* iosurface.c */,
-				8820D1DB23171F0100697A34 /* iosurface.h */,
-			);
-			path = SockPort3;
 			sourceTree = "<group>";
 		};
 		880D0CB023286272003CB5CB /* ViewControllers */ = {
@@ -245,11 +241,7 @@
 				880D0CA523286185003CB5CB /* vnode.h */,
 				880D0CA623286190003CB5CB /* offsetsDump.h */,
 				880D0CA72328619E003CB5CB /* offsetsDump.c */,
-				8820D1E3231720E100697A34 /* kernel_memory.c */,
 				885BB1DB23174B2B0048F2B3 /* jelbrekLib.h */,
-				8820D1E4231720E100697A34 /* kernel_memory.h */,
-				8820D1E62317216E00697A34 /* offsets.m */,
-				8820D1E72317216E00697A34 /* offsets.h */,
 				8820D1E9231729C300697A34 /* everythingElse.m */,
 				8820D1EA231729C300697A34 /* everythingElse.h */,
 			);
@@ -259,10 +251,7 @@
 		8820D1D323171E3A00697A34 /* Exploits */ = {
 			isa = PBXGroup;
 			children = (
-				FADCDF8F2333C51200C0777D /* SockPuppet3 */,
-				880D0CA42328607E003CB5CB /* SockPort3 */,
-				FADCDF9A2333C7FA00C0777D /* exploit.h */,
-				FADCDF9B2333C7FA00C0777D /* exploit.c */,
+				88070BEE24BA5ECB00DF8B8C /* time_waste */,
 			);
 			path = Exploits;
 			sourceTree = "<group>";
@@ -277,20 +266,6 @@
 				8820D1F52317323000697A34 /* OSMessageNotification.h */,
 			);
 			path = IOKit;
-			sourceTree = "<group>";
-		};
-		FADCDF8F2333C51200C0777D /* SockPuppet3 */ = {
-			isa = PBXGroup;
-			children = (
-				FADCDF902333C5FB00C0777D /* SockPuppet.cpp */,
-				FADCDF912333C5FB00C0777D /* SockPuppet.hpp */,
-				FADCDF942333C68500C0777D /* Utility.cpp */,
-				FADCDF952333C68500C0777D /* Utility.hpp */,
-				FADCDF932333C65800C0777D /* SockPuppetStructures.h */,
-				FADCDF972333C75700C0777D /* SockPuppet3.h */,
-				FADCDF982333C75700C0777D /* SockPuppet3.mm */,
-			);
-			path = SockPuppet3;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -448,22 +423,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FADCDF962333C68600C0777D /* Utility.cpp in Sources */,
+				88070BFB24BA5EED00DF8B8C /* exploit_utilities.c in Sources */,
+				88070BFE24BA5EED00DF8B8C /* kernel_memory.c in Sources */,
+				88070BFC24BA5EED00DF8B8C /* exploit.c in Sources */,
 				8820D1EB231729C300697A34 /* everythingElse.m in Sources */,
-				8820D1D923171EC100697A34 /* exploit_utilities.c in Sources */,
 				880D0CA82328619E003CB5CB /* offsetsDump.c in Sources */,
 				880D0CAA232861AF003CB5CB /* insert_dylib.c in Sources */,
-				8820D1DC23171F0100697A34 /* iosurface.c in Sources */,
-				8820D1D623171E7100697A34 /* sockport.c in Sources */,
+				88070BFF24BA5EED00DF8B8C /* IOSurface_stuff.c in Sources */,
 				8820D1A523171E2000697A34 /* ViewController.m in Sources */,
-				8820D1E82317216E00697A34 /* offsets.m in Sources */,
-				FADCDF922333C5FB00C0777D /* SockPuppet.cpp in Sources */,
 				880D0CAD232861C2003CB5CB /* payload.c in Sources */,
 				8820D1B023171E2500697A34 /* main.m in Sources */,
-				FADCDF992333C75700C0777D /* SockPuppet3.mm in Sources */,
-				8820D1E5231720E100697A34 /* kernel_memory.c in Sources */,
+				88070BFD24BA5EED00DF8B8C /* IOAccelerator_stuff.c in Sources */,
+				88070C0324BA618000DF8B8C /* offsets.m in Sources */,
 				8820D1A223171E2000697A34 /* AppDelegate.m in Sources */,
-				FADCDF9C2333C7FA00C0777D /* exploit.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,7 +605,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W7J462TP2V;
+				DEVELOPMENT_TEAM = T8ALTGMVXN;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/rootlessJB4/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -646,13 +618,14 @@
 					"$(PROJECT_DIR)/rootlessJB4/Headers",
 					"$(PROJECT_DIR)/rootlessJB4/libs",
 				);
+				MARKETING_VERSION = 2.0;
 				OTHER_LDFLAGS = (
 					"-framework",
 					IOKit,
 					"-w",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bp.rootlessJB;
+				PRODUCT_BUNDLE_IDENTIFIER = org.brandonplank.rootlessJB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -663,7 +636,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W7J462TP2V;
+				DEVELOPMENT_TEAM = T8ALTGMVXN;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/rootlessJB4/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -676,13 +649,14 @@
 					"$(PROJECT_DIR)/rootlessJB4/Headers",
 					"$(PROJECT_DIR)/rootlessJB4/libs",
 				);
+				MARKETING_VERSION = 2.0;
 				OTHER_LDFLAGS = (
 					"-framework",
 					IOKit,
 					"-w",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bp.rootlessJB;
+				PRODUCT_BUNDLE_IDENTIFIER = org.brandonplank.rootlessJB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -693,14 +667,14 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GR3NL679U6;
+				DEVELOPMENT_TEAM = T8ALTGMVXN;
 				INFOPLIST_FILE = ESSHTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bp.ESSHTests;
+				PRODUCT_BUNDLE_IDENTIFIER = org.brandonplank.rootlessTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rootlessJB4.app/rootlessJB4";
@@ -712,14 +686,14 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GR3NL679U6;
+				DEVELOPMENT_TEAM = T8ALTGMVXN;
 				INFOPLIST_FILE = ESSHTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bp.ESSHTests;
+				PRODUCT_BUNDLE_IDENTIFIER = org.brandonplank.rootlessTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rootlessJB4.app/rootlessJB4";
