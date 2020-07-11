@@ -312,6 +312,40 @@
 			<key>uniqueIdentifier</key>
 			<string>0EE1E22F-411B-4068-B455-980D76140743</string>
 		</dict>
+		<key>137C75CB-A7B0-4BB8-811C-DF545E4B510B</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>137C75CB-A7B0-4BB8-811C-DF545E4B510B.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>rootlessJB4 project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>rootlessJB4</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build rootlessJB4</string>
+			<key>timeStartedRecording</key>
+			<real>616204381.10363495</real>
+			<key>timeStoppedRecording</key>
+			<real>616204385.26314604</real>
+			<key>title</key>
+			<string>Build rootlessJB4</string>
+			<key>uniqueIdentifier</key>
+			<string>137C75CB-A7B0-4BB8-811C-DF545E4B510B</string>
+		</dict>
 		<key>1445AB8C-5AEE-447D-9E25-EC9A6D3B2DEE</key>
 		<dict>
 			<key>className</key>
@@ -2045,6 +2079,40 @@
 			<string>Build rootlessJB4</string>
 			<key>uniqueIdentifier</key>
 			<string>85B5095B-8299-4E42-B50F-9D3737D3C32C</string>
+		</dict>
+		<key>89B0C89A-6D79-4832-8A5A-9E97132A6901</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>89B0C89A-6D79-4832-8A5A-9E97132A6901.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>rootlessJB4 project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>rootlessJB4</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Archive rootlessJB4</string>
+			<key>timeStartedRecording</key>
+			<real>616202738.77977002</real>
+			<key>timeStoppedRecording</key>
+			<real>616202754.11220503</real>
+			<key>title</key>
+			<string>Archive rootlessJB4</string>
+			<key>uniqueIdentifier</key>
+			<string>89B0C89A-6D79-4832-8A5A-9E97132A6901</string>
 		</dict>
 		<key>8A7EAE75-B3D1-4ADB-926B-053549FDA178</key>
 		<dict>

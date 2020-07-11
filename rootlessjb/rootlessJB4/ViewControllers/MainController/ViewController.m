@@ -1041,7 +1041,7 @@ NSArray *plists;
 
 
 - (IBAction)credits:(id)sender {
-    NSString *message = [NSString stringWithFormat:@"Original rootlessJB by Jake James\n\nRootlessJB4 by @_bplank\n\ntime_waste exploit by Jake James\n\nSaily Package Manager by @Lakr233\n\nVersion RC.2.0"];
+    NSString *message = [NSString stringWithFormat:@"Original rootlessJB & time_waste by Jake James\n\nRootlessJB4 by @_bplank\n\nSaily Package Manager by @Lakr233\n\nVersion RC.2.0"];
     
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Credits" message:message preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *Done = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action){

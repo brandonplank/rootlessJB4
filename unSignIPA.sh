@@ -11,7 +11,7 @@ rm -rf Payload
 
 mkdir Payload
 
-mv /Users/brandonplank/Library/Developer/Xcode/DerivedData/rootlessJB4-geyotspsgkxiwygqtvhkhsudeokw/Build/Products/Debug-iphoneos/rootlessJB4.app ./Payload/rootlessJB4.app
+mv /Users/brandonplank/Desktop/Projects/rootlessJB4/rootlessJB4.app ./Payload/rootlessJB4.app
 
 find . -name '.DS_Store' -delete
 find . -name '_CodeSignature' -delete
