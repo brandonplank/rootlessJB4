@@ -1,1 +1,0 @@
-/Users/brandonplank/Desktop/Projects/rootlessJB4/rootlessjb/DerivedData/rootlessJB4/Build/Intermediates.noindex/ArchiveIntermediates/rootlessJB4/InstallationBuildProductsLocation/Applications/rootlessJB4.app
