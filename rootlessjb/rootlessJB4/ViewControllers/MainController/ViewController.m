@@ -601,55 +601,25 @@ BOOL debug = true;
         continue1:
             
             // MARK: Install Saily.Daemon
-            if (self.saily.isOn) {
-//            if (false) {
-                    
-                dispatch_semaphore_t sem = dispatch_semaphore_create(0);
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
                 
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    
-                    [[UIApplication sharedApplication] endIgnoringInteractionEvents];
-                    
-                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"WARNING"
-                                                   message:@"Saily.app should be installed by your resign tools as well as rootless JB itself."
-                                                   preferredStyle:UIAlertControllerStyleAlert];
+                [[UIApplication sharedApplication] endIgnoringInteractionEvents];
+                
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"WARNING"
+                                               message:@"Saily.app should be installed by your resign tool. We are also running uicache, this may take a bit."
+                                               preferredStyle:UIAlertControllerStyleAlert];
 
-                    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                        [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
-                        dispatch_semaphore_signal(sem);
-                    }];
-                    [alert addAction:defaultAction];
-                    [self presentViewController:alert animated:true completion: nil];
-                    
-                });
+                UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+                    dispatch_semaphore_signal(dispatch_semaphore_create(0));
+                }];
+                [alert addAction:defaultAction];
+                [self presentViewController:alert animated:true completion: nil];
                 
-                dispatch_semaphore_wait(sem, 30);
-                
-                goto escapeSaily;
-                
-                LOG("[*] Installing RootlessInstaller");
-                
-                removeFile("/var/containers/Bundle/tweaksupport/Applications/Saily.app");
-                copyFile(in_bundle("apps/Saily.app"), "/var/containers/Bundle/tweaksupport/Applications/Saily.app");
-                
-                failIf(system_("/var/containers/Bundle/tweaksupport/usr/local/bin/jtool --sign --inplace --ent /var/containers/Bundle/tweaksupport/Applications/Saily.app/ent.xml /var/containers/Bundle/tweaksupport/Applications/Saily.app/Saily && /var/containers/Bundle/tweaksupport/usr/bin/inject /var/containers/Bundle/tweaksupport/Applications/Saily.app/Saily"), "[-] Failed to sign Saily.app");
-                
-                removeFile("/var/LIB/MobileSubstrate/DynamicLibraries/Saily");
-                copyFile("/var/containers/Bundle/tweaksupport/Applications/Saily.app/Saily", "/var/LIB/MobileSubstrate/DynamicLibraries/Saily.app");
-                
-                [self resignAndInjectToTrustCache:@"/var/containers/Bundle/tweaksupport/Applications/Saily.app/Saily" ents:@"ent.xml"];
-
-                // just in case
-                fixMmap("/var/ulb/libsubstitute.dylib");
-                fixMmap("/var/LIB/Frameworks/CydiaSubstrate.framework/CydiaSubstrate");
-                fixMmap("/var/LIB/MobileSubstrate/DynamicLibraries/AppSyncUnified.dylib");
-                
-                // The frameworks under Saily also need to be resigned, but its too f*** just use impactor?
-                
-                failIf(launch("/var/containers/Bundle/tweaksupport/usr/bin/uicache", NULL, NULL, NULL, NULL, NULL, NULL, NULL), "[-] Failed to install Saily.app");
-                
-            }
-        escapeSaily:
+            });
+            
+            dispatch_semaphore_wait(dispatch_semaphore_create(0), 30);
             
             // MARK: Install Filza
             if (self.filza.isOn){
@@ -864,7 +834,7 @@ NSArray *plists;
         // MARK: EXPLOIT
         if (runExploit((__bridge void *)(self)) == false){
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_jbtext setTitle:@"Exploit Failed" forState:UIControlStateNormal];
+                [self->_unjbtext setTitle:@"Exploit Failed" forState:UIControlStateNormal];
                 
             });
             return;
@@ -872,7 +842,7 @@ NSArray *plists;
         
         if (escapeSandbox() == false){
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_jbtext setTitle:@"Error: Sandbox" forState:UIControlStateNormal];
+                [self->_unjbtext setTitle:@"Error: Sandbox" forState:UIControlStateNormal];
                 
             });
             return;
@@ -880,7 +850,7 @@ NSArray *plists;
         
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_unjbtext setTitle:@"-> 2/12" forState:UIControlStateNormal];
+            [self->_unjbtext setTitle:@"-> 2/3" forState:UIControlStateNormal];
             
         });
         
@@ -890,10 +860,10 @@ NSArray *plists;
         
         
         //unsandbox(getpid());
-        printf("Unsandboxed");
+        printf("Unsandboxed\n");
         
         rootify(getpid());
-        printf("rooted");
+        printf("rooted\n");
         
         setHSP4();
         
