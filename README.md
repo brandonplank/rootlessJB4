@@ -7,7 +7,11 @@
 ## Support
 
 - All A7-A11 devices
-- iOS 12.0 - 12.2 & 12.4
+- iOS 12.0 - 12.4.6
+
+# Saily
+- Sideload with reprovision or AltStore!
+-  ![Saily ipa](https://github.com/SailyTeam/Saily-Store/releases/download/M0.6-b1122/SailySandBoxed.ipa)
 
 # One Week Uptime Check Point
 ![AIDA64](https://github.com//BrandonPlank/rootlessJB4/blob/master/IMG_545942B67DA6-1.JPEG?raw=true)
