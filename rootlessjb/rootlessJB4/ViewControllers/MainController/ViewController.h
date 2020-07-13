@@ -10,6 +10,9 @@
 
 @interface ViewController : UIViewController
 
+- (IBAction)jailbreakButtonAction:(UIButton *)sender;
+- (IBAction)optionButtonAction:(UIButton *)sender;
+- (IBAction)creditButtonAction:(UIButton *)sender;
 
 @end
 
