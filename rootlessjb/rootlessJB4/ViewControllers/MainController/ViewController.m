@@ -56,6 +56,7 @@ printf(string "\n", ##args); \
 @property (weak, nonatomic) IBOutlet UISwitch *ReProvision;
 @property (weak, nonatomic) IBOutlet UISwitch *saily;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *exploitControl;
+@property (weak, nonatomic) IBOutlet UISwitch *removeSwitch;
 
 
 @end
@@ -139,7 +140,7 @@ NSArray *plists;
     return setHSP4();
 }
 
-- (IBAction)uninstall:(id)sender {
+-(void)uninstall {
     
     [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
     
@@ -348,12 +349,27 @@ NSArray *plists;
 }
 
 - (IBAction)optionButtonAction:(UIButton *)sender {
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/brandonplank/rootlessJB4"]];
+
 }
 
 - (IBAction)jailbreakButtonAction:(UIButton *)sender {
-    [self jailbreakMe];
+    
+    if (self.removeSwitch.on) {
+        [self uninstall];
+    } else {
+        [self jailbreakMe];
+    }
 }
 
+- (IBAction)removeSwitchFlipped:(UISwitch *)sender {
+        if (sender.on) {
+            [self.jbtext setTitle:@"Unjailbreak" forState:UIControlStateNormal];
+        } else {
+            [self.jbtext setTitle:@"Jailbreak" forState:UIControlStateNormal];
+        }
+}
 
 -(void)jailbreakMe{
         [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
