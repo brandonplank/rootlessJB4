@@ -147,7 +147,7 @@ NSArray *plists;
         
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_unjbtext setTitle:@"-> 1/3"
+            [self->_unjbtext setTitle:@"1/3"
              
                             forState:UIControlStateNormal];
             
@@ -173,7 +173,7 @@ NSArray *plists;
         
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_unjbtext setTitle:@"-> 2/3" forState:UIControlStateNormal];
+            [self->_unjbtext setTitle:@"2/3" forState:UIControlStateNormal];
             
         });
         
@@ -198,108 +198,108 @@ NSArray *plists;
         LOG("[*] Uninstalling...");
         
         // Just fucking do this
-        //failIf(!fileExists("/var/containers/Bundle/.installed_rootlessJB4"), "[-] rootlessJB was never installed before! (this version of it)");
+        failIf(!fileExists("/var/containers/Bundle/.installed_rootlessJB3"), "[-] rootlessJB was never installed before! (this version of it)");
         
         
         
        
         removeFile("/var/LIB");
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_unjbtext setTitle:@"-> Cleaning /var/LIB" forState:UIControlStateNormal];
+            [self->_unjbtext setTitle:@"Cleaning /var/LIB" forState:UIControlStateNormal];
             
         });
         removeFile("/var/ulb");
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_unjbtext setTitle:@"-> Cleaning /var/ulb" forState:UIControlStateNormal];
+            [self->_unjbtext setTitle:@"Cleaning /var/ulb" forState:UIControlStateNormal];
             
         });
         removeFile("/var/bin");
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_unjbtext setTitle:@"-> Cleaning /var/bin" forState:UIControlStateNormal];
+            [self->_unjbtext setTitle:@"Cleaning /var/bin" forState:UIControlStateNormal];
             
         });
         removeFile("/var/sbin");
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_unjbtext setTitle:@"-> Cleaning /var/sbin" forState:UIControlStateNormal];
+            [self->_unjbtext setTitle:@"Cleaning /var/sbin" forState:UIControlStateNormal];
             
         });
         removeFile("/var/libexec");
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_unjbtext setTitle:@"-> Cleaning /var/libexec" forState:UIControlStateNormal];
+            [self->_unjbtext setTitle:@"Cleaning /var/libexec" forState:UIControlStateNormal];
             
         });
         removeFile("/var/containers/Bundle/tweaksupport/Applications");
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_unjbtext setTitle:@"-> Cleaning Applications" forState:UIControlStateNormal];
+            [self->_unjbtext setTitle:@"Cleaning Applications" forState:UIControlStateNormal];
             
         });
         removeFile("/var/Apps");
         removeFile("/var/profile");
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_unjbtext setTitle:@"-> Cleaning /var/profile" forState:UIControlStateNormal];
+            [self->_unjbtext setTitle:@"Cleaning /var/profile" forState:UIControlStateNormal];
             
         });
         removeFile("/var/motd");
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_unjbtext setTitle:@"-> Cleaning /var/motd" forState:UIControlStateNormal];
+            [self->_unjbtext setTitle:@"Cleaning /var/motd" forState:UIControlStateNormal];
             
         });
         removeFile("/var/dropbear");
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_unjbtext setTitle:@"-> Cleaning /var/dropbear" forState:UIControlStateNormal];
+            [self->_unjbtext setTitle:@"Cleaning /var/dropbear" forState:UIControlStateNormal];
             
         });
         removeFile("/var/log/testbin.log");
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_unjbtext setTitle:@"-> Cleaning /var/log/testbin.log" forState:UIControlStateNormal];
+            [self->_unjbtext setTitle:@"Cleaning /var/log/testbin.log" forState:UIControlStateNormal];
             
         });
         removeFile("/var/log/jailbreakd-stdout.log");
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_unjbtext setTitle:@"-> Cleaning /var/log/jailbreakd-stdout.log" forState:UIControlStateNormal];
+            [self->_unjbtext setTitle:@"Cleaning /var/log/jailbreakd-stdout.log" forState:UIControlStateNormal];
             
         });
         removeFile("/var/log/jailbreakd-stderr.log");
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_unjbtext setTitle:@"-> Cleaning /var/log/jailbreakd-stderr.log" forState:UIControlStateNormal];
+            [self->_unjbtext setTitle:@"Cleaning /var/log/jailbreakd-stderr.log" forState:UIControlStateNormal];
             
         });
         removeFile("/var/log/pspawn_payload_xpcproxy.log");
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_unjbtext setTitle:@"-> Cleaning /var/log/pspawn_payload_xpcproxy.log" forState:UIControlStateNormal];
+            [self->_unjbtext setTitle:@"Cleaning /var/log/pspawn_payload_xpcproxy.log" forState:UIControlStateNormal];
             
         });
         removeFile("/var/containers/Bundle/.installed_rootlessJB3");
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_unjbtext setTitle:@"-> Cleaning /var/containers/Bundle/.installed_rootlessJB3" forState:UIControlStateNormal];
+            [self->_unjbtext setTitle:@"Cleaning /var/containers/Bundle/.installed_rootlessJB3" forState:UIControlStateNormal];
             
         });
         removeFile("/var/lib");
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_unjbtext setTitle:@"-> Cleaning /var/lib" forState:UIControlStateNormal];
+            [self->_unjbtext setTitle:@"Cleaning /var/lib" forState:UIControlStateNormal];
             
         });
         removeFile("/var/etc");
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_unjbtext setTitle:@"-> Cleaning /var/etc" forState:UIControlStateNormal];
+            [self->_unjbtext setTitle:@"Cleaning /var/etc" forState:UIControlStateNormal];
             
         });
         removeFile("/var/usr");
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_unjbtext setTitle:@"-> Cleaning /var/usr" forState:UIControlStateNormal];
+            [self->_unjbtext setTitle:@"Cleaning /var/usr" forState:UIControlStateNormal];
             
         });
         
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_unjbtext setTitle:@"-> 3/3" forState:UIControlStateNormal];
+            [self->_unjbtext setTitle:@"3/3" forState:UIControlStateNormal];
             
         });
         
         sleep(2);
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_unjbtext setTitle:@"-> Running uicache" forState:UIControlStateNormal];
+            [self->_unjbtext setTitle:@"Running uicache" forState:UIControlStateNormal];
             
         });
         
@@ -312,7 +312,7 @@ NSArray *plists;
         
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_unjbtext setTitle:@"-> Cleaning /var/bin" forState:UIControlStateNormal];
+            [self->_unjbtext setTitle:@"Cleaning /var/bin" forState:UIControlStateNormal];
             
         });
         
@@ -336,7 +336,7 @@ NSArray *plists;
 
 
 - (IBAction)creditButtonAction:(UIButton *)sender {
-    NSString *message = [NSString stringWithFormat:@"RootlessJB4 by @_bplank\n\nSaily Package Manager by @Lakr233\n\nOriginal rootlessJB & time_waste by Jake James\n\n UI by the lovely Dave (@DaveWijk) \n\n Version RC.2.0"];
+    NSString *message = [NSString stringWithFormat:@"RootlessJB4 by @_bplank\n\nSaily Package Manager by @Lakr233\n\nOriginal rootlessJB & time_waste by Jake James\n\n UI by the lovely Dave (@DaveWijk) \n\n Version RC.2.1"];
     
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Credits" message:message preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *Done = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action){
@@ -361,7 +361,7 @@ NSArray *plists;
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul), ^{
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_jbtext setTitle:@"-> 1/12"
+                [self->_jbtext setTitle:@"-> 1/27"
                                forState:UIControlStateNormal];
                 
             });
@@ -385,7 +385,7 @@ NSArray *plists;
             
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_jbtext setTitle:@"-> 2/12" forState:UIControlStateNormal];
+                [self->_jbtext setTitle:@"2/27" forState:UIControlStateNormal];
                 
             });
             
@@ -393,27 +393,27 @@ NSArray *plists;
             init_with_kbase(tfp0, kbase);
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_jbtext setTitle:@"-> 3/12" forState:UIControlStateNormal];
+                [self->_jbtext setTitle:@"3/27" forState:UIControlStateNormal];
                 
             });
             
             rootify(getpid());
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_jbtext setTitle:@"-> 4/12" forState:UIControlStateNormal];
+                [self->_jbtext setTitle:@"4/27" forState:UIControlStateNormal];
                 
             });
             
             
             setHSP4();
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_jbtext setTitle:@"-> 5/12" forState:UIControlStateNormal];
+                [self->_jbtext setTitle:@"5/27" forState:UIControlStateNormal];
                 
             });
             
             
             setcsflags(getpid()); // set some csflags
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_jbtext setTitle:@"-> 6/12" forState:UIControlStateNormal];
+                [self->_jbtext setTitle:@"6/27" forState:UIControlStateNormal];
                 
             });
             
@@ -421,19 +421,19 @@ NSArray *plists;
             platformize(getpid()); // set TF_PLATFORM
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_jbtext setTitle:@"-> 7/12" forState:UIControlStateNormal];
+                [self->_jbtext setTitle:@"7/27" forState:UIControlStateNormal];
                 
             });
             
             
             UnlockNVRAM();
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_jbtext setTitle:@"-> 8/12" forState:UIControlStateNormal];
+                [self->_jbtext setTitle:@"8/27" forState:UIControlStateNormal];
                 
             });
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_jbtext setTitle:@"-> 9/12" forState:UIControlStateNormal];
+                [self->_jbtext setTitle:@"9/27" forState:UIControlStateNormal];
                 
             });
             
@@ -495,7 +495,7 @@ NSArray *plists;
                 LOG("[+] Installed bootstrap!");
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [self->_jbtext setTitle:@"-> 10/12" forState:UIControlStateNormal];
+                    [self->_jbtext setTitle:@"10/27" forState:UIControlStateNormal];
                     
                 });
                 
@@ -503,14 +503,17 @@ NSArray *plists;
             }
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_jbtext setTitle:@"-> 11/12" forState:UIControlStateNormal];
-                
+                [self->_jbtext setTitle:@"11/27" forState:UIControlStateNormal];
             });
             
             
             // MARK: JBDaemon
             //---- for jailbreakd & amfid ----//
             failIf(dumpOffsetsToFile("/var/containers/Bundle/tweaksupport/offsets.data"), "[-] Failed to save offsets");
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self->_jbtext setTitle:@"12/27" forState:UIControlStateNormal];
+            });
             
             //---- different tools ----//
             
@@ -524,6 +527,9 @@ NSArray *plists;
                 untar(dpkg, "/");
                 fclose(dpkg);
             }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self->_jbtext setTitle:@"13/27" forState:UIControlStateNormal];
+            });
             
             // MARK: OPENSSH
             //---- update dropbear ----//
@@ -535,6 +541,10 @@ NSArray *plists;
             FILE *fixed_dropbear = fopen((char*)in_bundle("tars/dropbear.v2018.76.tar"), "r");
             untar(fixed_dropbear, "/var/containers/Bundle/");
             fclose(fixed_dropbear);
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self->_jbtext setTitle:@"14/27" forState:UIControlStateNormal];
+            });
             
             //---- update jailbreakd ----//
             // MARK: JBDaemon Update
@@ -588,6 +598,10 @@ NSArray *plists;
             
             removeFile("/var/log/pspawn_payload_xpcproxy.log");
             
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self->_jbtext setTitle:@"15/27" forState:UIControlStateNormal];
+            });
+            
             //---- codesign patch ----//
             // MARK: CODESIGN
             if (!fileExists(in_bundle("bins/tester"))) {
@@ -614,10 +628,16 @@ NSArray *plists;
             else {
                 LOG("[+] binaries already trusted?");
             }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self->_jbtext setTitle:@"16/27" forState:UIControlStateNormal];
+            });
             
             //---- let's go! ----//
             
             prepare_payload(); // this will chmod 777 everything
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self->_jbtext setTitle:@"17/27" forState:UIControlStateNormal];
+            });
             
             // MARK: SETUP
             //----- setup SSH -----//
@@ -636,6 +656,10 @@ NSArray *plists;
             pid_t dpd = pid_of_procName("dropbear");
             usleep(1000);
             if (!dpd) failIf(launchAsPlatform("/var/containers/Bundle/iosbinpack64/usr/local/bin/dropbear", "-R", "-E", NULL, NULL, NULL, NULL, NULL), "[-] Failed to launch dropbear");
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self->_jbtext setTitle:@"18/27" forState:UIControlStateNormal];
+            });
             
             //------------- launch daeamons -------------//
             //-- you can drop any daemon plist in iosbinpack64/LaunchDaemons and it will be loaded automatically --//
@@ -659,6 +683,10 @@ NSArray *plists;
                 chmod([file UTF8String], 0644);
                 chown([file UTF8String], 0, 0);
             }
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self->_jbtext setTitle:@"19/27" forState:UIControlStateNormal];
+            });
             
             // clean up
             removeFile("/var/log/testbin.log");
@@ -695,6 +723,9 @@ NSArray *plists;
                 }
                 close(open("/var/containers/Bundle/tweaksupport/data/.installed_debs", O_CREAT));
             }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self->_jbtext setTitle:@"20/27" forState:UIControlStateNormal];
+            });
             
             // MARK: INJECT TWEAK
             if (self.tweaks.isOn) {
@@ -745,12 +776,19 @@ NSArray *plists;
                 LOG("[?] Are we still alive?!");
                 
                 //----- magic end here -----//
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self->_jbtext setTitle:@"21/27" forState:UIControlStateNormal];
+                });
                 
                 // cache pid and we're done
                 pid_t installd = pid_of_procName("installd");
                 pid_t bb = pid_of_procName("backboardd");
                 pid_t amfid = pid_of_procName("amfid");
                 if (amfid) kill(amfid, SIGKILL);
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self->_jbtext setTitle:@"22/27" forState:UIControlStateNormal];
+                });
                 
                 // AppSync
                 
@@ -769,6 +807,9 @@ NSArray *plists;
                         removeFile([path UTF8String]);
                     }
                 }
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self->_jbtext setTitle:@"23/27" forState:UIControlStateNormal];
+                });
                 
                 // MARK: INSTALL Reprovision
                 if (self.ReProvision.isOn) {
@@ -803,6 +844,9 @@ NSArray *plists;
                     //                failIf(launch("/var/containers/Bundle/tweaksupport/usr/bin/uicache", NULL, NULL, NULL, NULL, NULL, NULL, NULL), "[-] Failed to install iSuperSU");
                     
                 }
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self->_jbtext setTitle:@"24/27" forState:UIControlStateNormal];
+                });
                 
                 if(debug == true){
                     
@@ -832,6 +876,9 @@ NSArray *plists;
                     
                 }
             continue1:
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self->_jbtext setTitle:@"25/27" forState:UIControlStateNormal];
+                });
                 
                 // MARK: Install Saily.Daemon
                 
@@ -941,7 +988,9 @@ NSArray *plists;
                     
                 }
                 
-                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self->_jbtext setTitle:@"26/27" forState:UIControlStateNormal];
+                });
                 
                 NSArray *tweaks = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/var/ulb/TweakInject" error:NULL];
                 for (NSString *afile in tweaks) {
@@ -974,6 +1023,10 @@ NSArray *plists;
                         }
                     }
                 }
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self->_jbtext setTitle:@"27/27" forState:UIControlStateNormal];
+                });
                 
                 // find which applications are jailbreak applications and inject their executable
                 NSArray *applications = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/var/containers/Bundle/Application/" error:NULL];
@@ -1015,23 +1068,12 @@ NSArray *plists;
                     [self->_jbtext setTitle:@"Done!" forState:UIControlStateNormal];
                     
                 });
-                
-                
                 LOG("[+] Really jailbroken!");
                 term_jelbrek();
-                
-                // bye bye
                 kill(bb, 9);
-                //launch("/var/containers/Bundle/iosbinpack64/bin/bash", "-c", "/var/containers/Bundle/iosbinpack64/usr/bin/nohup /var/containers/Bundle/iosbinpack64/bin/bash -c \"/var/containers/Bundle/iosbinpack64/bin/launchctl unload /System/Library/LaunchDaemons/com.apple.backboardd.plist && /var/containers/Bundle/iosbinpack64/usr/bin/ldrestart; /var/containers/Bundle/iosbinpack64/bin/launchctl load /System/Library/LaunchDaemons/com.apple.backboardd.plist\" 2>&1 >/dev/null &", NULL, NULL, NULL, NULL, NULL);
                 exit(0);
-                
-                
-                
             }
-            
-            
         });
-    
 }
 
 @end
