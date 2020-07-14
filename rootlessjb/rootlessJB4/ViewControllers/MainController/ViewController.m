@@ -350,6 +350,8 @@ NSArray *plists;
 
 - (IBAction)optionButtonAction:(UIButton *)sender {
     
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/brandonplank/rootlessJB4"]];
+
 }
 
 - (IBAction)jailbreakButtonAction:(UIButton *)sender {
