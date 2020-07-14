@@ -1,25 +1,16 @@
 # rootlessJB12.4
 
- 
-![rootlessJB4](https://github.com/BrandonPlank/rootlessJB4/blob/master/IMG_0486.png?raw=true)
-
-
 ## Support
 
 - All A7-A11 devices
-- iOS 12.0 - 12.4.6
-
-# Saily
-- Sideload with reprovision or AltStore!
--  ![Saily ipa](https://github.com/SailyTeam/Saily-Store/releases/download/M0.6-b1122/SailySandBoxed.ipa)
-
-# One Week Uptime Check Point
-![AIDA64](https://github.com//BrandonPlank/rootlessJB4/blob/master/IMG_545942B67DA6-1.JPEG?raw=true)
+- iOS 12.0 - 12.4.7
 
 ## Saily Package Manager
 - Saily.Daemon is bundled with rootlessJB4
 - The SailySandBoxed.ipa should be installed as well as rootlessJB4.ipa
 - Not all packages work with our patches. Wait for developers to update
+- Sideload with reprovision or AltStore!
+- ![Saily ipa](https://github.com/SailyTeam/Saily-Store/releases/download/M0.6-b1122/SailySandBoxed.ipa)
 
 ## Usage notes
 
