@@ -30,6 +30,8 @@
 		8820D1AD23171E2500697A34 /* LaunchScreeniOS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8820D1AB23171E2500697A34 /* LaunchScreeniOS.storyboard */; };
 		8820D1B023171E2500697A34 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8820D1AF23171E2500697A34 /* main.m */; };
 		8820D1EB231729C300697A34 /* everythingElse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8820D1E9231729C300697A34 /* everythingElse.m */; };
+		885EB93B24BFA0B8002E9A54 /* MainTV.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88CB418624BE877D0056520D /* MainTV.storyboard */; };
+		885EB93C24BFA0C2002E9A54 /* LaunchScreenTV.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88CB418824BE87B90056520D /* LaunchScreenTV.storyboard */; };
 		88CB416224BE6C0E0056520D /* exploit_utilities.c in Sources */ = {isa = PBXBuildFile; fileRef = 88070BF024BA5EED00DF8B8C /* exploit_utilities.c */; };
 		88CB416324BE6C0E0056520D /* kernel_memory.c in Sources */ = {isa = PBXBuildFile; fileRef = 88070BF524BA5EED00DF8B8C /* kernel_memory.c */; };
 		88CB416424BE6C0E0056520D /* exploit.c in Sources */ = {isa = PBXBuildFile; fileRef = 88070BF324BA5EED00DF8B8C /* exploit.c */; };
@@ -49,10 +51,8 @@
 		88CB417424BE6C0E0056520D /* Comfortaa-VariableFont:wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5019957923354FFE00185F42 /* Comfortaa-VariableFont:wght.ttf */; };
 		88CB417524BE6C0E0056520D /* apps in Resources */ = {isa = PBXBuildFile; fileRef = 880D0CBF232875A7003CB5CB /* apps */; };
 		88CB417624BE6C0E0056520D /* bins in Resources */ = {isa = PBXBuildFile; fileRef = 880D0CBB23287599003CB5CB /* bins */; };
-		88CB417724BE6C0E0056520D /* LaunchScreeniOS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8820D1AB23171E2500697A34 /* LaunchScreeniOS.storyboard */; };
 		88CB417824BE6C0E0056520D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8820D1A923171E2500697A34 /* Assets.xcassets */; };
 		88CB417924BE6C0E0056520D /* tars in Resources */ = {isa = PBXBuildFile; fileRef = 880D0CBD232875A1003CB5CB /* tars */; };
-		88CB417A24BE6C0E0056520D /* MainiOS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8820D1A623171E2000697A34 /* MainiOS.storyboard */; };
 		88CB418224BE6C5E0056520D /* TVInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88CB418124BE6C5E0056520D /* TVInfo.plist */; };
 /* End PBXBuildFile section */
 
@@ -482,13 +482,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				88CB417424BE6C0E0056520D /* Comfortaa-VariableFont:wght.ttf in Resources */,
+				885EB93B24BFA0B8002E9A54 /* MainTV.storyboard in Resources */,
+				885EB93C24BFA0C2002E9A54 /* LaunchScreenTV.storyboard in Resources */,
 				88CB417524BE6C0E0056520D /* apps in Resources */,
 				88CB417624BE6C0E0056520D /* bins in Resources */,
-				88CB417724BE6C0E0056520D /* LaunchScreeniOS.storyboard in Resources */,
 				88CB418224BE6C5E0056520D /* TVInfo.plist in Resources */,
 				88CB417824BE6C0E0056520D /* Assets.xcassets in Resources */,
 				88CB417924BE6C0E0056520D /* tars in Resources */,
-				88CB417A24BE6C0E0056520D /* MainiOS.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
