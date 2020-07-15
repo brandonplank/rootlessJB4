@@ -54,8 +54,6 @@ printf(string "\n", ##args); \
 @property (weak, nonatomic) IBOutlet UISwitch *tweaks;
 @property (weak, nonatomic) IBOutlet UISwitch *filza;
 @property (weak, nonatomic) IBOutlet UISwitch *ReProvision;
-@property (weak, nonatomic) IBOutlet UISwitch *saily;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *exploitControl;
 @property (weak, nonatomic) IBOutlet UISwitch *removeSwitch;
 
 
@@ -71,12 +69,11 @@ int csops(pid_t pid, unsigned int  ops, void * useraddr, size_t usersize);
 
 BOOL debug = true;
 
-
+uint32_t flags;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    uint32_t flags;
     csops(getpid(), 0, &flags, 0);
     
     if ((flags & 0x4000000)) { // platform
@@ -159,6 +156,7 @@ NSArray *plists;
         if (runExploit((__bridge void *)(self)) == false){
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self->_unjbtext setTitle:@"Exploit Failed" forState:UIControlStateNormal];
+                err_exploit((__bridge void *)(self));
                 
             });
             return;
@@ -167,7 +165,7 @@ NSArray *plists;
         if (escapeSandbox() == false){
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self->_unjbtext setTitle:@"Error: Sandbox" forState:UIControlStateNormal];
-                
+                err_exploit((__bridge void *)(self));
             });
             return;
         }
@@ -175,7 +173,6 @@ NSArray *plists;
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self->_unjbtext setTitle:@"2/3" forState:UIControlStateNormal];
-            
         });
         
         
@@ -349,9 +346,14 @@ NSArray *plists;
 }
 
 - (IBAction)optionButtonAction:(UIButton *)sender {
-    
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/brandonplank/rootlessJB4"]];
+}
 
+void err_exploit(void *init){
+    NSString *message = [NSString stringWithFormat:@"The jailbreak has failed, please reboot your device and try again."];
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Jailbreak" message:message preferredStyle:UIAlertControllerStyleAlert];
+    [(__bridge UIViewController *)init presentViewController:alertController animated:true completion:nil];
 }
 
 - (IBAction)jailbreakButtonAction:(UIButton *)sender {
@@ -367,7 +369,12 @@ NSArray *plists;
         if (sender.on) {
             [self.jbtext setTitle:@"Unjailbreak" forState:UIControlStateNormal];
         } else {
-            [self.jbtext setTitle:@"Jailbreak" forState:UIControlStateNormal];
+            if ((flags & 0x4000000)) { // platform
+                [self.jbtext setTitle:@"Jailbroken" forState:UIControlStateNormal];
+                [self.jbtext setEnabled:NO];
+            } else {
+                [self.jbtext setTitle:@"Jailbreak" forState:UIControlStateNormal];
+            }
         }
 }
 
@@ -377,7 +384,7 @@ NSArray *plists;
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul), ^{
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_jbtext setTitle:@"-> 1/27"
+                [self->_jbtext setTitle:@"1/27"
                                forState:UIControlStateNormal];
                 
             });
@@ -386,7 +393,7 @@ NSArray *plists;
             if (runExploit((__bridge void *)(self)) == false){
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self->_jbtext setTitle:@"Exploit Failed" forState:UIControlStateNormal];
-                    
+                    err_exploit((__bridge void *)(self));
                 });
                 return;
             }
@@ -394,7 +401,7 @@ NSArray *plists;
             if (escapeSandbox() == false){
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self->_jbtext setTitle:@"Error: Sandbox" forState:UIControlStateNormal];
-                    
+                    err_exploit((__bridge void *)(self));
                 });
                 return;
             }
@@ -402,7 +409,6 @@ NSArray *plists;
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self->_jbtext setTitle:@"2/27" forState:UIControlStateNormal];
-                
             });
             
             
@@ -895,27 +901,6 @@ NSArray *plists;
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self->_jbtext setTitle:@"25/27" forState:UIControlStateNormal];
                 });
-                
-                // MARK: Install Saily.Daemon
-                
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    
-                    [[UIApplication sharedApplication] endIgnoringInteractionEvents];
-                    
-                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"WARNING"
-                                                   message:@"Saily.app should be installed by your resign tool. We are also running uicache, this may take a bit."
-                                                   preferredStyle:UIAlertControllerStyleAlert];
-
-                    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                        [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
-                        dispatch_semaphore_signal(dispatch_semaphore_create(0));
-                    }];
-                    [alert addAction:defaultAction];
-                    [self presentViewController:alert animated:true completion: nil];
-                    
-                });
-                
-                dispatch_semaphore_wait(dispatch_semaphore_create(0), 30);
                 
                 // MARK: Install Filza
                 if (self.filza.isOn){
