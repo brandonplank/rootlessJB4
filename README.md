@@ -3,7 +3,7 @@
 ## Support
 
 - All A7-A11 devices
-- iOS 12.0 - 12.4.7
+- iOS 12.0 - 12.4.8
 
 ## Saily Package Manager
 - Saily.Daemon is bundled with rootlessJB4
