@@ -162,14 +162,6 @@ NSArray *plists;
             return;
         }
         
-        if (escapeSandbox() == false){
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_unjbtext setTitle:@"Error: Sandbox" forState:UIControlStateNormal];
-                err_exploit((__bridge void *)(self));
-            });
-            return;
-        }
-        
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self->_unjbtext setTitle:@"2/3" forState:UIControlStateNormal];
@@ -393,14 +385,6 @@ void err_exploit(void *init){
             if (runExploit((__bridge void *)(self)) == false){
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self->_jbtext setTitle:@"Exploit Failed" forState:UIControlStateNormal];
-                    err_exploit((__bridge void *)(self));
-                });
-                return;
-            }
-            
-            if (escapeSandbox() == false){
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [self->_jbtext setTitle:@"Error: Sandbox" forState:UIControlStateNormal];
                     err_exploit((__bridge void *)(self));
                 });
                 return;

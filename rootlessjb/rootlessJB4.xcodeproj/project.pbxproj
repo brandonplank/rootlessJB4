@@ -8,12 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5019957A23354FFE00185F42 /* Comfortaa-VariableFont:wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5019957923354FFE00185F42 /* Comfortaa-VariableFont:wght.ttf */; };
-		88070BFB24BA5EED00DF8B8C /* exploit_utilities.c in Sources */ = {isa = PBXBuildFile; fileRef = 88070BF024BA5EED00DF8B8C /* exploit_utilities.c */; };
-		88070BFC24BA5EED00DF8B8C /* exploit.c in Sources */ = {isa = PBXBuildFile; fileRef = 88070BF324BA5EED00DF8B8C /* exploit.c */; };
-		88070BFD24BA5EED00DF8B8C /* IOAccelerator_stuff.c in Sources */ = {isa = PBXBuildFile; fileRef = 88070BF424BA5EED00DF8B8C /* IOAccelerator_stuff.c */; };
-		88070BFE24BA5EED00DF8B8C /* kernel_memory.c in Sources */ = {isa = PBXBuildFile; fileRef = 88070BF524BA5EED00DF8B8C /* kernel_memory.c */; };
-		88070BFF24BA5EED00DF8B8C /* IOSurface_stuff.c in Sources */ = {isa = PBXBuildFile; fileRef = 88070BF724BA5EED00DF8B8C /* IOSurface_stuff.c */; };
-		88070C0324BA618000DF8B8C /* offsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 88070C0124BA618000DF8B8C /* offsets.m */; };
 		880D0CA123285E62003CB5CB /* IOKit.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D0C9E23285E62003CB5CB /* IOKit.tbd */; };
 		880D0CA223285E62003CB5CB /* jelbrekLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D0C9F23285E62003CB5CB /* jelbrekLib.a */; };
 		880D0CA323285E62003CB5CB /* libjb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D0CA023285E62003CB5CB /* libjb.a */; };
@@ -23,6 +17,18 @@
 		880D0CBC2328759A003CB5CB /* bins in Resources */ = {isa = PBXBuildFile; fileRef = 880D0CBB23287599003CB5CB /* bins */; };
 		880D0CBE232875A1003CB5CB /* tars in Resources */ = {isa = PBXBuildFile; fileRef = 880D0CBD232875A1003CB5CB /* tars */; };
 		880D0CC0232875A7003CB5CB /* apps in Resources */ = {isa = PBXBuildFile; fileRef = 880D0CBF232875A7003CB5CB /* apps */; };
+		881B15A124C2424D004AE52D /* exploit.c in Sources */ = {isa = PBXBuildFile; fileRef = 881B159124C2424D004AE52D /* exploit.c */; };
+		881B15A224C2424D004AE52D /* SockPuppet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 881B159324C2424D004AE52D /* SockPuppet.cpp */; };
+		881B15A324C2424D004AE52D /* SockPuppet3.mm in Sources */ = {isa = PBXBuildFile; fileRef = 881B159624C2424D004AE52D /* SockPuppet3.mm */; };
+		881B15A424C2424D004AE52D /* Utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 881B159824C2424D004AE52D /* Utility.cpp */; };
+		881B15A524C2424E004AE52D /* exploit_utilities.c in Sources */ = {isa = PBXBuildFile; fileRef = 881B159B24C2424D004AE52D /* exploit_utilities.c */; };
+		881B15A624C2424E004AE52D /* iosurface.c in Sources */ = {isa = PBXBuildFile; fileRef = 881B159D24C2424D004AE52D /* iosurface.c */; };
+		881B15A724C2424E004AE52D /* sockport.c in Sources */ = {isa = PBXBuildFile; fileRef = 881B159F24C2424D004AE52D /* sockport.c */; };
+		881B15AC24C24275004AE52D /* offsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 881B15AB24C24275004AE52D /* offsets.m */; };
+		881B15AE24C2427B004AE52D /* kernel_memory.c in Sources */ = {isa = PBXBuildFile; fileRef = 881B15AD24C2427B004AE52D /* kernel_memory.c */; };
+		881B15D524C25568004AE52D /* time_frame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 881B15D324C25568004AE52D /* time_frame.framework */; };
+		881B15D624C2556D004AE52D /* time_frame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 881B15D324C25568004AE52D /* time_frame.framework */; };
+		881B15D724C2556D004AE52D /* time_frame.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 881B15D324C25568004AE52D /* time_frame.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8820D1A223171E2000697A34 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8820D1A123171E2000697A34 /* AppDelegate.m */; };
 		8820D1A523171E2000697A34 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8820D1A423171E2000697A34 /* ViewController.m */; };
 		8820D1A823171E2000697A34 /* MainiOS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8820D1A623171E2000697A34 /* MainiOS.storyboard */; };
@@ -32,18 +38,13 @@
 		8820D1EB231729C300697A34 /* everythingElse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8820D1E9231729C300697A34 /* everythingElse.m */; };
 		885EB93B24BFA0B8002E9A54 /* MainTV.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88CB418624BE877D0056520D /* MainTV.storyboard */; };
 		885EB93C24BFA0C2002E9A54 /* LaunchScreenTV.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88CB418824BE87B90056520D /* LaunchScreenTV.storyboard */; };
-		88CB416224BE6C0E0056520D /* exploit_utilities.c in Sources */ = {isa = PBXBuildFile; fileRef = 88070BF024BA5EED00DF8B8C /* exploit_utilities.c */; };
-		88CB416324BE6C0E0056520D /* kernel_memory.c in Sources */ = {isa = PBXBuildFile; fileRef = 88070BF524BA5EED00DF8B8C /* kernel_memory.c */; };
-		88CB416424BE6C0E0056520D /* exploit.c in Sources */ = {isa = PBXBuildFile; fileRef = 88070BF324BA5EED00DF8B8C /* exploit.c */; };
+		88C8151624C1760600B2E194 /* Kernel_Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C8151524C1760600B2E194 /* Kernel_Base.m */; };
 		88CB416524BE6C0E0056520D /* everythingElse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8820D1E9231729C300697A34 /* everythingElse.m */; };
 		88CB416624BE6C0E0056520D /* offsetsDump.c in Sources */ = {isa = PBXBuildFile; fileRef = 880D0CA72328619E003CB5CB /* offsetsDump.c */; };
 		88CB416724BE6C0E0056520D /* insert_dylib.c in Sources */ = {isa = PBXBuildFile; fileRef = 880D0CA9232861AF003CB5CB /* insert_dylib.c */; };
-		88CB416824BE6C0E0056520D /* IOSurface_stuff.c in Sources */ = {isa = PBXBuildFile; fileRef = 88070BF724BA5EED00DF8B8C /* IOSurface_stuff.c */; };
 		88CB416924BE6C0E0056520D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8820D1A423171E2000697A34 /* ViewController.m */; };
 		88CB416A24BE6C0E0056520D /* payload.c in Sources */ = {isa = PBXBuildFile; fileRef = 880D0CAC232861C2003CB5CB /* payload.c */; };
 		88CB416B24BE6C0E0056520D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8820D1AF23171E2500697A34 /* main.m */; };
-		88CB416C24BE6C0E0056520D /* IOAccelerator_stuff.c in Sources */ = {isa = PBXBuildFile; fileRef = 88070BF424BA5EED00DF8B8C /* IOAccelerator_stuff.c */; };
-		88CB416D24BE6C0E0056520D /* offsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 88070C0124BA618000DF8B8C /* offsets.m */; };
 		88CB416E24BE6C0E0056520D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8820D1A123171E2000697A34 /* AppDelegate.m */; };
 		88CB417024BE6C0E0056520D /* libjb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D0CA023285E62003CB5CB /* libjb.a */; };
 		88CB417124BE6C0E0056520D /* IOKit.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 880D0C9E23285E62003CB5CB /* IOKit.tbd */; };
@@ -73,20 +74,32 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		881B15CA24C244DC004AE52D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		881B15CD24C2453E004AE52D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				881B15D724C2556D004AE52D /* time_frame.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		5019957923354FFE00185F42 /* Comfortaa-VariableFont:wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-VariableFont:wght.ttf"; sourceTree = "<group>"; };
-		88070BEF24BA5EED00DF8B8C /* exploit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exploit.h; sourceTree = "<group>"; };
-		88070BF024BA5EED00DF8B8C /* exploit_utilities.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = exploit_utilities.c; sourceTree = "<group>"; };
-		88070BF124BA5EED00DF8B8C /* IOSurface_stuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOSurface_stuff.h; sourceTree = "<group>"; };
-		88070BF224BA5EED00DF8B8C /* exploit_utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exploit_utilities.h; sourceTree = "<group>"; };
-		88070BF324BA5EED00DF8B8C /* exploit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = exploit.c; sourceTree = "<group>"; };
-		88070BF424BA5EED00DF8B8C /* IOAccelerator_stuff.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IOAccelerator_stuff.c; sourceTree = "<group>"; };
-		88070BF524BA5EED00DF8B8C /* kernel_memory.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kernel_memory.c; sourceTree = "<group>"; };
-		88070BF624BA5EED00DF8B8C /* IOAccelerator_stuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOAccelerator_stuff.h; sourceTree = "<group>"; };
-		88070BF724BA5EED00DF8B8C /* IOSurface_stuff.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IOSurface_stuff.c; sourceTree = "<group>"; };
-		88070BF924BA5EED00DF8B8C /* kernel_memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kernel_memory.h; sourceTree = "<group>"; };
-		88070C0124BA618000DF8B8C /* offsets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = offsets.m; sourceTree = "<group>"; };
-		88070C0224BA618000DF8B8C /* offsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = offsets.h; sourceTree = "<group>"; };
 		880D0C9E23285E62003CB5CB /* IOKit.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = IOKit.tbd; sourceTree = "<group>"; };
 		880D0C9F23285E62003CB5CB /* jelbrekLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = jelbrekLib.a; sourceTree = "<group>"; };
 		880D0CA023285E62003CB5CB /* libjb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjb.a; sourceTree = "<group>"; };
@@ -101,6 +114,26 @@
 		880D0CBB23287599003CB5CB /* bins */ = {isa = PBXFileReference; lastKnownFileType = folder; path = bins; sourceTree = "<group>"; };
 		880D0CBD232875A1003CB5CB /* tars */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tars; sourceTree = "<group>"; };
 		880D0CBF232875A7003CB5CB /* apps */ = {isa = PBXFileReference; lastKnownFileType = folder; path = apps; sourceTree = "<group>"; };
+		881B159024C2424D004AE52D /* exploit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exploit.h; sourceTree = "<group>"; };
+		881B159124C2424D004AE52D /* exploit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = exploit.c; sourceTree = "<group>"; };
+		881B159324C2424D004AE52D /* SockPuppet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SockPuppet.cpp; sourceTree = "<group>"; };
+		881B159424C2424D004AE52D /* SockPuppet.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SockPuppet.hpp; sourceTree = "<group>"; };
+		881B159524C2424D004AE52D /* SockPuppet3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SockPuppet3.h; sourceTree = "<group>"; };
+		881B159624C2424D004AE52D /* SockPuppet3.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SockPuppet3.mm; sourceTree = "<group>"; };
+		881B159724C2424D004AE52D /* SockPuppetStructures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SockPuppetStructures.h; sourceTree = "<group>"; };
+		881B159824C2424D004AE52D /* Utility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utility.cpp; sourceTree = "<group>"; };
+		881B159924C2424D004AE52D /* Utility.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Utility.hpp; sourceTree = "<group>"; };
+		881B159B24C2424D004AE52D /* exploit_utilities.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = exploit_utilities.c; sourceTree = "<group>"; };
+		881B159C24C2424D004AE52D /* exploit_utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exploit_utilities.h; sourceTree = "<group>"; };
+		881B159D24C2424D004AE52D /* iosurface.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = iosurface.c; sourceTree = "<group>"; };
+		881B159E24C2424D004AE52D /* iosurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iosurface.h; sourceTree = "<group>"; };
+		881B159F24C2424D004AE52D /* sockport.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sockport.c; sourceTree = "<group>"; };
+		881B15A024C2424D004AE52D /* sockport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sockport.h; sourceTree = "<group>"; };
+		881B15A924C24275004AE52D /* offsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = offsets.h; sourceTree = "<group>"; };
+		881B15AA24C24275004AE52D /* kernel_memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kernel_memory.h; sourceTree = "<group>"; };
+		881B15AB24C24275004AE52D /* offsets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = offsets.m; sourceTree = "<group>"; };
+		881B15AD24C2427B004AE52D /* kernel_memory.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kernel_memory.c; sourceTree = "<group>"; };
+		881B15D324C25568004AE52D /* time_frame.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = time_frame.framework; sourceTree = "<group>"; };
 		8820D19D23171E2000697A34 /* rootlessJB4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rootlessJB4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8820D1A023171E2000697A34 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8820D1A123171E2000697A34 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -121,10 +154,11 @@
 		8820D1F42317323000697A34 /* IOTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOTypes.h; sourceTree = "<group>"; };
 		8820D1F52317323000697A34 /* OSMessageNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSMessageNotification.h; sourceTree = "<group>"; };
 		885BB1DB23174B2B0048F2B3 /* jelbrekLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jelbrekLib.h; sourceTree = "<group>"; };
+		88C8151524C1760600B2E194 /* Kernel_Base.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Kernel_Base.m; sourceTree = "<group>"; };
+		88C8151724C1762400B2E194 /* Kernel_Base.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Kernel_Base.h; sourceTree = "<group>"; };
 		88CB417F24BE6C0E0056520D /* rootlessTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rootlessTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88CB418024BE6C0E0056520D /* rootlessJB4 copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "rootlessJB4 copy-Info.plist"; path = "/Users/brandonplank/Desktop/Projects/rootlessJB4/rootlessjb/rootlessJB4 copy-Info.plist"; sourceTree = "<absolute>"; };
 		88CB418124BE6C5E0056520D /* TVInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TVInfo.plist; sourceTree = "<group>"; };
-		88CB418324BE83870056520D /* message.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = message.h; sourceTree = "<group>"; };
 		88CB418624BE877D0056520D /* MainTV.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTV.storyboard; sourceTree = "<group>"; };
 		88CB418824BE87B90056520D /* LaunchScreenTV.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreenTV.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				880D0CA323285E62003CB5CB /* libjb.a in Frameworks */,
+				881B15D624C2556D004AE52D /* time_frame.framework in Frameworks */,
 				880D0CA123285E62003CB5CB /* IOKit.tbd in Frameworks */,
 				880D0CA223285E62003CB5CB /* jelbrekLib.a in Frameworks */,
 			);
@@ -159,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88CB417024BE6C0E0056520D /* libjb.a in Frameworks */,
+				881B15D524C25568004AE52D /* time_frame.framework in Frameworks */,
 				88CB417124BE6C0E0056520D /* IOKit.tbd in Frameworks */,
 				88CB417224BE6C0E0056520D /* jelbrekLib.a in Frameworks */,
 			);
@@ -167,26 +203,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		88070BEE24BA5ECB00DF8B8C /* time_waste */ = {
-			isa = PBXGroup;
-			children = (
-				88070C0224BA618000DF8B8C /* offsets.h */,
-				88070C0124BA618000DF8B8C /* offsets.m */,
-				88070BF024BA5EED00DF8B8C /* exploit_utilities.c */,
-				88070BF224BA5EED00DF8B8C /* exploit_utilities.h */,
-				88070BF324BA5EED00DF8B8C /* exploit.c */,
-				88070BEF24BA5EED00DF8B8C /* exploit.h */,
-				88070BF424BA5EED00DF8B8C /* IOAccelerator_stuff.c */,
-				88070BF624BA5EED00DF8B8C /* IOAccelerator_stuff.h */,
-				88070BF724BA5EED00DF8B8C /* IOSurface_stuff.c */,
-				88070BF124BA5EED00DF8B8C /* IOSurface_stuff.h */,
-				88CB418324BE83870056520D /* message.h */,
-				88070BF524BA5EED00DF8B8C /* kernel_memory.c */,
-				88070BF924BA5EED00DF8B8C /* kernel_memory.h */,
-			);
-			path = time_waste;
-			sourceTree = "<group>";
-		};
 		880D0C9D23285E62003CB5CB /* libs */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,12 +249,59 @@
 			path = StoryBoards;
 			sourceTree = "<group>";
 		};
+		881B159224C2424D004AE52D /* SockPuppet3 */ = {
+			isa = PBXGroup;
+			children = (
+				881B159324C2424D004AE52D /* SockPuppet.cpp */,
+				881B159424C2424D004AE52D /* SockPuppet.hpp */,
+				881B159524C2424D004AE52D /* SockPuppet3.h */,
+				881B159624C2424D004AE52D /* SockPuppet3.mm */,
+				881B159724C2424D004AE52D /* SockPuppetStructures.h */,
+				881B159824C2424D004AE52D /* Utility.cpp */,
+				881B159924C2424D004AE52D /* Utility.hpp */,
+			);
+			path = SockPuppet3;
+			sourceTree = "<group>";
+		};
+		881B159A24C2424D004AE52D /* SockPort3 */ = {
+			isa = PBXGroup;
+			children = (
+				881B159B24C2424D004AE52D /* exploit_utilities.c */,
+				881B159C24C2424D004AE52D /* exploit_utilities.h */,
+				881B159D24C2424D004AE52D /* iosurface.c */,
+				881B159E24C2424D004AE52D /* iosurface.h */,
+				881B159F24C2424D004AE52D /* sockport.c */,
+				881B15A024C2424D004AE52D /* sockport.h */,
+			);
+			path = SockPort3;
+			sourceTree = "<group>";
+		};
+		881B15A824C24265004AE52D /* ExploitUtils */ = {
+			isa = PBXGroup;
+			children = (
+				881B15AD24C2427B004AE52D /* kernel_memory.c */,
+				881B15AA24C24275004AE52D /* kernel_memory.h */,
+				881B15AB24C24275004AE52D /* offsets.m */,
+				881B15A924C24275004AE52D /* offsets.h */,
+			);
+			path = ExploitUtils;
+			sourceTree = "<group>";
+		};
+		881B15AF24C242FC004AE52D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				881B15D324C25568004AE52D /* time_frame.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8820D19423171E2000697A34 = {
 			isa = PBXGroup;
 			children = (
 				8820D19F23171E2000697A34 /* rootlessJB4 */,
 				8820D19E23171E2000697A34 /* Products */,
 				88CB418024BE6C0E0056520D /* rootlessJB4 copy-Info.plist */,
+				881B15AF24C242FC004AE52D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -288,6 +351,8 @@
 				885BB1DB23174B2B0048F2B3 /* jelbrekLib.h */,
 				8820D1E9231729C300697A34 /* everythingElse.m */,
 				8820D1EA231729C300697A34 /* everythingElse.h */,
+				88C8151524C1760600B2E194 /* Kernel_Base.m */,
+				88C8151724C1762400B2E194 /* Kernel_Base.h */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -295,7 +360,11 @@
 		8820D1D323171E3A00697A34 /* Exploits */ = {
 			isa = PBXGroup;
 			children = (
-				88070BEE24BA5ECB00DF8B8C /* time_waste */,
+				881B15A824C24265004AE52D /* ExploitUtils */,
+				881B159124C2424D004AE52D /* exploit.c */,
+				881B159024C2424D004AE52D /* exploit.h */,
+				881B159A24C2424D004AE52D /* SockPort3 */,
+				881B159224C2424D004AE52D /* SockPuppet3 */,
 			);
 			path = Exploits;
 			sourceTree = "<group>";
@@ -341,6 +410,7 @@
 				8820D19A23171E2000697A34 /* Frameworks */,
 				8820D19B23171E2000697A34 /* Resources */,
 				5019957B23355CCF00185F42 /* ShellScript */,
+				881B15CD24C2453E004AE52D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -395,6 +465,7 @@
 				88CB416F24BE6C0E0056520D /* Frameworks */,
 				88CB417324BE6C0E0056520D /* Resources */,
 				88CB417B24BE6C0E0056520D /* ShellScript */,
+				881B15CA24C244DC004AE52D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -536,19 +607,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88070BFB24BA5EED00DF8B8C /* exploit_utilities.c in Sources */,
-				88070BFE24BA5EED00DF8B8C /* kernel_memory.c in Sources */,
-				88070BFC24BA5EED00DF8B8C /* exploit.c in Sources */,
+				881B15A424C2424D004AE52D /* Utility.cpp in Sources */,
+				88C8151624C1760600B2E194 /* Kernel_Base.m in Sources */,
+				881B15A524C2424E004AE52D /* exploit_utilities.c in Sources */,
+				881B15A624C2424E004AE52D /* iosurface.c in Sources */,
 				8820D1EB231729C300697A34 /* everythingElse.m in Sources */,
 				880D0CA82328619E003CB5CB /* offsetsDump.c in Sources */,
+				881B15A724C2424E004AE52D /* sockport.c in Sources */,
 				880D0CAA232861AF003CB5CB /* insert_dylib.c in Sources */,
-				88070BFF24BA5EED00DF8B8C /* IOSurface_stuff.c in Sources */,
 				8820D1A523171E2000697A34 /* ViewController.m in Sources */,
 				880D0CAD232861C2003CB5CB /* payload.c in Sources */,
 				8820D1B023171E2500697A34 /* main.m in Sources */,
-				88070BFD24BA5EED00DF8B8C /* IOAccelerator_stuff.c in Sources */,
-				88070C0324BA618000DF8B8C /* offsets.m in Sources */,
+				881B15A224C2424D004AE52D /* SockPuppet.cpp in Sources */,
+				881B15A124C2424D004AE52D /* exploit.c in Sources */,
 				8820D1A223171E2000697A34 /* AppDelegate.m in Sources */,
+				881B15AC24C24275004AE52D /* offsets.m in Sources */,
+				881B15A324C2424D004AE52D /* SockPuppet3.mm in Sources */,
+				881B15AE24C2427B004AE52D /* kernel_memory.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,18 +645,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88CB416224BE6C0E0056520D /* exploit_utilities.c in Sources */,
-				88CB416324BE6C0E0056520D /* kernel_memory.c in Sources */,
-				88CB416424BE6C0E0056520D /* exploit.c in Sources */,
 				88CB416524BE6C0E0056520D /* everythingElse.m in Sources */,
 				88CB416624BE6C0E0056520D /* offsetsDump.c in Sources */,
 				88CB416724BE6C0E0056520D /* insert_dylib.c in Sources */,
-				88CB416824BE6C0E0056520D /* IOSurface_stuff.c in Sources */,
 				88CB416924BE6C0E0056520D /* ViewController.m in Sources */,
 				88CB416A24BE6C0E0056520D /* payload.c in Sources */,
 				88CB416B24BE6C0E0056520D /* main.m in Sources */,
-				88CB416C24BE6C0E0056520D /* IOAccelerator_stuff.c in Sources */,
-				88CB416D24BE6C0E0056520D /* offsets.m in Sources */,
 				88CB416E24BE6C0E0056520D /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -738,8 +807,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 299;
 				DEVELOPMENT_TEAM = T8ALTGMVXN;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/rootlessJB4/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -751,7 +826,7 @@
 					"$(PROJECT_DIR)/rootlessJB4/Headers",
 					"$(PROJECT_DIR)/rootlessJB4/libs",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.1;
 				OTHER_LDFLAGS = (
 					"-framework",
 					IOKit,
@@ -769,8 +844,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 299;
 				DEVELOPMENT_TEAM = T8ALTGMVXN;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/rootlessJB4/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -782,7 +863,7 @@
 					"$(PROJECT_DIR)/rootlessJB4/Headers",
 					"$(PROJECT_DIR)/rootlessJB4/libs",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.1;
 				OTHER_LDFLAGS = (
 					"-framework",
 					IOKit,
@@ -876,6 +957,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T8ALTGMVXN;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/rootlessJB4",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = "rootlessJB4 copy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -887,7 +974,7 @@
 					"$(PROJECT_DIR)/rootlessJB4/Headers",
 					"$(PROJECT_DIR)/rootlessJB4/libs",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.1;
 				OTHER_LDFLAGS = (
 					"-framework",
 					IOKit,
@@ -909,6 +996,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T8ALTGMVXN;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/rootlessJB4",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = "rootlessJB4 copy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -920,7 +1013,7 @@
 					"$(PROJECT_DIR)/rootlessJB4/Headers",
 					"$(PROJECT_DIR)/rootlessJB4/libs",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.1;
 				OTHER_LDFLAGS = (
 					"-framework",
 					IOKit,
