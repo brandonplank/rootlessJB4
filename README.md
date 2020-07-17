@@ -10,7 +10,7 @@
 - The SailySandBoxed.ipa should be installed as well as rootlessJB4.ipa
 - Not all packages work with our patches. Wait for developers to update
 - Sideload with reprovision or AltStore!
-- ![Saily ipa](https://github.com/SailyTeam/Saily-Store/releases/download/M0.6-b1122/SailySandBoxed.ipa)
+- ![Saily ipa](SailySandBoxed.ipa)
 
 ## Usage notes
 
