@@ -344,7 +344,7 @@ NSArray *plists;
         [alertController dismissViewControllerAnimated:true completion:nil];
     }];
     [alertController addAction:Done];
-    [alertController setPreferredAction:Done];
+    [alertController setPreferredAction:Done];it
     [self presentViewController:alertController animated:true completion:nil];
 }
 
