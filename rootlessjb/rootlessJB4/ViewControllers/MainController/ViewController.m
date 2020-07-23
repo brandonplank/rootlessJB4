@@ -55,6 +55,7 @@ printf(string "\n", ##args); \
 @property (weak, nonatomic) IBOutlet UISwitch *filza;
 @property (weak, nonatomic) IBOutlet UISwitch *ReProvision;
 @property (weak, nonatomic) IBOutlet UISwitch *removeSwitch;
+@property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
 
 
 @end
@@ -73,12 +74,15 @@ uint32_t flags;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     csops(getpid(), 0, &flags, 0);
     
     if ((flags & 0x4000000)) { // platform
+        [_progressBar setProgress:(float)27
+         /27 animated:YES];
         [self.jbtext setTitle:@"Jailbroken" forState:UIControlStateNormal];
         [self.jbtext setEnabled:NO];
+    } else {
+        [_progressBar setProgress:(float)0/27 animated:YES];
     }
     
     uname(&u);
@@ -142,16 +146,17 @@ NSArray *plists;
     [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul), ^{
-        
-        
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_unjbtext setTitle:@"1/3"
+            [self->_unjbtext setTitle:@"Unjailbreaking"
              
                             forState:UIControlStateNormal];
             
         });
         
-        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self->_progressBar setProgress:(float)1/3 animated:YES];
+        });
+
         // MARK: EXPLOIT
         if (runExploit((__bridge void *)(self)) == false){
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -164,7 +169,7 @@ NSArray *plists;
         
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_unjbtext setTitle:@"2/3" forState:UIControlStateNormal];
+            [self->_progressBar setProgress:(float)2/3 animated:YES];
         });
         
         
@@ -282,8 +287,7 @@ NSArray *plists;
         
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_unjbtext setTitle:@"3/3" forState:UIControlStateNormal];
-            
+            [self->_progressBar setProgress:(float)3/3 animated:YES];
         });
         
         sleep(2);
@@ -376,9 +380,13 @@ void err_exploit(void *init){
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul), ^{
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_jbtext setTitle:@"1/27"
+                [self->_jbtext setTitle:@"Jailbreaking"
                                forState:UIControlStateNormal];
                 
+            });
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self->_progressBar setProgress:(float)1/27 animated:YES];
             });
             
             // MARK: EXPLOIT
@@ -392,55 +400,48 @@ void err_exploit(void *init){
             
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_jbtext setTitle:@"2/27" forState:UIControlStateNormal];
+                [self->_progressBar setProgress:(float)2/27 animated:YES];
             });
             
             
             init_with_kbase(tfp0, kbase);
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_jbtext setTitle:@"3/27" forState:UIControlStateNormal];
-                
+                [self->_progressBar setProgress:(float)3/27 animated:YES];
             });
             
             rootify(getpid());
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_jbtext setTitle:@"4/27" forState:UIControlStateNormal];
-                
+                [self->_progressBar setProgress:(float)4/27 animated:YES];
             });
             
             
             setHSP4();
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_jbtext setTitle:@"5/27" forState:UIControlStateNormal];
-                
+                [self->_progressBar setProgress:(float)5/27 animated:YES];
             });
             
             
             setcsflags(getpid()); // set some csflags
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_jbtext setTitle:@"6/27" forState:UIControlStateNormal];
-                
+                [self->_progressBar setProgress:(float)6/27 animated:YES];
             });
             
             
             platformize(getpid()); // set TF_PLATFORM
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_jbtext setTitle:@"7/27" forState:UIControlStateNormal];
-                
+                [self->_progressBar setProgress:(float)7/27 animated:YES];
             });
             
             
             UnlockNVRAM();
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_jbtext setTitle:@"8/27" forState:UIControlStateNormal];
-                
+                [self->_progressBar setProgress:(float)8/27 animated:YES];
             });
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_jbtext setTitle:@"9/27" forState:UIControlStateNormal];
-                
+                [self->_progressBar setProgress:(float)9/27 animated:YES];
             });
             
             
@@ -501,15 +502,14 @@ void err_exploit(void *init){
                 LOG("[+] Installed bootstrap!");
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [self->_jbtext setTitle:@"10/27" forState:UIControlStateNormal];
-                    
+                    [self->_progressBar setProgress:(float)10/27 animated:YES];
                 });
                 
                 
             }
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_jbtext setTitle:@"11/27" forState:UIControlStateNormal];
+                [self->_progressBar setProgress:(float)11/27 animated:YES];
             });
             
             
@@ -518,7 +518,7 @@ void err_exploit(void *init){
             failIf(dumpOffsetsToFile("/var/containers/Bundle/tweaksupport/offsets.data"), "[-] Failed to save offsets");
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_jbtext setTitle:@"12/27" forState:UIControlStateNormal];
+                [self->_progressBar setProgress:(float)12/27 animated:YES];
             });
             
             //---- different tools ----//
@@ -534,7 +534,7 @@ void err_exploit(void *init){
                 fclose(dpkg);
             }
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_jbtext setTitle:@"13/27" forState:UIControlStateNormal];
+                [self->_progressBar setProgress:(float)13/27 animated:YES];
             });
             
             // MARK: OPENSSH
@@ -549,7 +549,7 @@ void err_exploit(void *init){
             fclose(fixed_dropbear);
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_jbtext setTitle:@"14/27" forState:UIControlStateNormal];
+                [self->_progressBar setProgress:(float)14/27 animated:YES];
             });
             
             //---- update jailbreakd ----//
@@ -605,7 +605,7 @@ void err_exploit(void *init){
             removeFile("/var/log/pspawn_payload_xpcproxy.log");
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_jbtext setTitle:@"15/27" forState:UIControlStateNormal];
+                [self->_progressBar setProgress:(float)15/27 animated:YES];
             });
             
             //---- codesign patch ----//
@@ -635,14 +635,14 @@ void err_exploit(void *init){
                 LOG("[+] binaries already trusted?");
             }
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_jbtext setTitle:@"16/27" forState:UIControlStateNormal];
+                [self->_progressBar setProgress:(float)16/27 animated:YES];
             });
             
             //---- let's go! ----//
             
             prepare_payload(); // this will chmod 777 everything
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_jbtext setTitle:@"17/27" forState:UIControlStateNormal];
+                [self->_progressBar setProgress:(float)17/27 animated:YES];
             });
             
             // MARK: SETUP
@@ -664,7 +664,7 @@ void err_exploit(void *init){
             if (!dpd) failIf(launchAsPlatform("/var/containers/Bundle/iosbinpack64/usr/local/bin/dropbear", "-R", "-E", NULL, NULL, NULL, NULL, NULL), "[-] Failed to launch dropbear");
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_jbtext setTitle:@"18/27" forState:UIControlStateNormal];
+                [self->_progressBar setProgress:(float)18/27 animated:YES];
             });
             
             //------------- launch daeamons -------------//
@@ -691,7 +691,7 @@ void err_exploit(void *init){
             }
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_jbtext setTitle:@"19/27" forState:UIControlStateNormal];
+                [self->_progressBar setProgress:(float)19/27 animated:YES];
             });
             
             // clean up
@@ -730,7 +730,7 @@ void err_exploit(void *init){
                 close(open("/var/containers/Bundle/tweaksupport/data/.installed_debs", O_CREAT));
             }
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self->_jbtext setTitle:@"20/27" forState:UIControlStateNormal];
+                [self->_progressBar setProgress:(float)20/27 animated:YES];
             });
             
             // MARK: INJECT TWEAK
@@ -783,7 +783,7 @@ void err_exploit(void *init){
                 
                 //----- magic end here -----//
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [self->_jbtext setTitle:@"21/27" forState:UIControlStateNormal];
+                    [self->_progressBar setProgress:(float)21/27 animated:YES];
                 });
                 
                 // cache pid and we're done
@@ -793,7 +793,7 @@ void err_exploit(void *init){
                 if (amfid) kill(amfid, SIGKILL);
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [self->_jbtext setTitle:@"22/27" forState:UIControlStateNormal];
+                    [self->_progressBar setProgress:(float)22/27 animated:YES];
                 });
                 
                 // AppSync
@@ -814,7 +814,7 @@ void err_exploit(void *init){
                     }
                 }
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [self->_jbtext setTitle:@"23/27" forState:UIControlStateNormal];
+                    [self->_progressBar setProgress:(float)23/27 animated:YES];
                 });
                 
                 // MARK: INSTALL Reprovision
@@ -851,7 +851,7 @@ void err_exploit(void *init){
                     
                 }
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [self->_jbtext setTitle:@"24/27" forState:UIControlStateNormal];
+                    [self->_progressBar setProgress:(float)24/27 animated:YES];
                 });
                 
                 if(debug == true){
@@ -883,7 +883,7 @@ void err_exploit(void *init){
                 }
             continue1:
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [self->_jbtext setTitle:@"25/27" forState:UIControlStateNormal];
+                    [self->_progressBar setProgress:(float)25/27 animated:YES];
                 });
                 
                 // MARK: Install Filza
@@ -969,12 +969,10 @@ void err_exploit(void *init){
                     fixMmap("/var/LIB/Frameworks/CydiaSubstrate.framework/CydiaSubstrate");
                     fixMmap("/var/LIB/MobileSubstrate/DynamicLibraries/AppSyncUnified.dylib");
                     
-                    failIf(launch("/var/containers/Bundle/tweaksupport/usr/bin/uicache", NULL, NULL, NULL, NULL, NULL, NULL, NULL), "[-] Failed to install Filza File Manager");
-                    
                 }
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [self->_jbtext setTitle:@"26/27" forState:UIControlStateNormal];
+                    [self->_progressBar setProgress:(float)26/27 animated:YES];
                 });
                 
                 NSArray *tweaks = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/var/ulb/TweakInject" error:NULL];
@@ -1010,8 +1008,9 @@ void err_exploit(void *init){
                 }
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [self->_jbtext setTitle:@"27/27" forState:UIControlStateNormal];
+                    [self->_progressBar setProgress:(float)27/27 animated:YES];
                 });
+                sleep(1);
                 
                 // find which applications are jailbreak applications and inject their executable
                 NSArray *applications = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/var/containers/Bundle/Application/" error:NULL];
@@ -1049,10 +1048,14 @@ void err_exploit(void *init){
                         }
                     }
                 }
+                
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [self->_jbtext setTitle:@"Done!" forState:UIControlStateNormal];
+                    [self->_jbtext setTitle:@"Running uicache" forState:UIControlStateNormal];
                     
                 });
+                
+                failIf(launch("/var/containers/Bundle/tweaksupport/usr/bin/uicache", NULL, NULL, NULL, NULL, NULL, NULL, NULL), "[-] Failed to run uicache");
+                
                 LOG("[+] Really jailbroken!");
                 term_jelbrek();
                 kill(bb, 9);

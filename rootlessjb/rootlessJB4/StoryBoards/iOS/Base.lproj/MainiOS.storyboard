@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="02i-kO-O28">
-    <device id="retina3_5" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -13,7 +13,7 @@
             <objects>
                 <viewController id="02i-kO-O28" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bKW-7k-7o5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="Wf5-WX-q5c">
@@ -74,7 +74,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                 <state key="normal" title="Jailbreak">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" red="0.32515081759999998" green="0.64310508970000002" blue="0.95170515779999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="self.clipsToBounds" value="YES"/>
@@ -86,8 +86,21 @@
                                     <action selector="jailbreakButtonAction:" destination="02i-kO-O28" eventType="touchUpInside" id="vuZ-mc-Vhd"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS 12.0 - 12.4.8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIo-x5-YZj">
+                                <rect key="frame" x="20" y="105" width="280" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="5mO-WM-9vF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="vVM-qp-fKc">
+                                <rect key="frame" x="32.5" y="277" width="255" height="2.5"/>
+                                <color key="trackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </progressView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="KIb-hO-fjF">
-                                <rect key="frame" x="32.5" y="354" width="255" height="230"/>
+                                <rect key="frame" x="32.5" y="318" width="255" height="230"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7F3-fh-6b2">
                                         <rect key="frame" x="0.0" y="0.0" width="255" height="48.5"/>
@@ -194,23 +207,17 @@
                                     <constraint firstAttribute="height" constant="230" id="xd4-gw-hC0"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS 12.0 - 12.4.8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIo-x5-YZj">
-                                <rect key="frame" x="20" y="105" width="280" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="5mO-WM-9vF"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.082352941176470587" green="0.082352941176470587" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="GBV-Zq-C3P" firstAttribute="top" secondItem="Wf5-WX-q5c" secondAttribute="bottom" constant="80" id="1Ro-kw-AO9"/>
-                            <constraint firstItem="KIb-hO-fjF" firstAttribute="top" secondItem="c7t-X2-AEs" secondAttribute="bottom" constant="20" id="6bY-Ud-4q4"/>
                             <constraint firstItem="kIo-x5-YZj" firstAttribute="leading" secondItem="9b2-a6-R3h" secondAttribute="leading" constant="20" id="HM0-0Y-U72"/>
+                            <constraint firstItem="vVM-qp-fKc" firstAttribute="leading" secondItem="c7t-X2-AEs" secondAttribute="leading" id="HMZ-uQ-4Py"/>
                             <constraint firstItem="9b2-a6-R3h" firstAttribute="trailing" secondItem="Wf5-WX-q5c" secondAttribute="trailing" constant="40" id="Iwk-7c-ggg"/>
+                            <constraint firstItem="9b2-a6-R3h" firstAttribute="bottom" secondItem="KIb-hO-fjF" secondAttribute="bottom" constant="20" id="Ssc-IX-Tfk"/>
                             <constraint firstItem="Wf5-WX-q5c" firstAttribute="top" secondItem="9b2-a6-R3h" secondAttribute="top" constant="30" id="aLg-YP-a34"/>
+                            <constraint firstItem="vVM-qp-fKc" firstAttribute="top" secondItem="GBV-Zq-C3P" secondAttribute="bottom" constant="8" id="dNh-IJ-Rwd"/>
+                            <constraint firstItem="vVM-qp-fKc" firstAttribute="trailing" secondItem="c7t-X2-AEs" secondAttribute="trailing" id="gdL-s9-tc5"/>
                             <constraint firstItem="c7t-X2-AEs" firstAttribute="top" secondItem="GBV-Zq-C3P" secondAttribute="bottom" constant="15" id="nNn-h9-Bq2"/>
                             <constraint firstItem="KIb-hO-fjF" firstAttribute="centerX" secondItem="bKW-7k-7o5" secondAttribute="centerX" id="qJO-1w-31G"/>
                             <constraint firstItem="9b2-a6-R3h" firstAttribute="trailing" secondItem="kIo-x5-YZj" secondAttribute="trailing" constant="20" id="sMV-IU-rvO"/>
@@ -225,6 +232,7 @@
                         <outlet property="ReProvision" destination="dkq-Ew-4eT" id="pa7-ss-7QA"/>
                         <outlet property="filza" destination="0uZ-wa-tXq" id="qcr-63-ig6"/>
                         <outlet property="jbtext" destination="GBV-Zq-C3P" id="DTy-H1-759"/>
+                        <outlet property="progressBar" destination="vVM-qp-fKc" id="8x0-aA-lgX"/>
                         <outlet property="removeSwitch" destination="x5a-7S-aFS" id="0sL-90-eOT"/>
                         <outlet property="tweaks" destination="jUU-Zz-KcG" id="4LF-V5-tLS"/>
                         <outlet property="unjbtext" destination="GBV-Zq-C3P" id="4G0-8h-HAN"/>
@@ -232,7 +240,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="He8-2u-OGL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2188" y="-200"/>
+            <point key="canvasLocation" x="-2188" y="-200.14992503748127"/>
         </scene>
     </scenes>
     <resources>
