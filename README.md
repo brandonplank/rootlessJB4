@@ -15,7 +15,7 @@
 ## Usage notes
 
 - Binaries are located in: /var/containers/Bundle/iosbinpack64
-- Jailbreak structs can be found at /var/containers/Bundle/tweaksuppoet/
+- Jailbreak structs can be found at /var/containers/Bundle/tweaksupport/
 - Symlinks include: /var/LIB, /var/ulb, /var/bin, /var/sbin, /var/Apps, /var/libexec
 - Root file system will be kept read only, just don't mess /var and you will be safe.
 
